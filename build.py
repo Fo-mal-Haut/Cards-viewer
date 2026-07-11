@@ -23,7 +23,13 @@ ASSETS_DIR = ROOT / "assets"
 BANKS_DIR = ASSETS_DIR / "banks"
 DOCS_DIR = ROOT / "docs"
 TEMPLATES_DIR = ROOT / "templates"
-HTML_FILES = ("index.html", "credit.html", "referral.html", "bin.html")
+HTML_FILES = (
+    "index.html",
+    "credit.html",
+    "referral.html",
+    "bin.html",
+    "withdrawal.html",
+)
 ROOT_MARKDOWN_PAGES = (("docs/link.md", "link.html", "link"),)
 STATIC_DIRS = ("assets", "css", "js")
 PRELOADED_SCRIPT = '<script src="js/generated/site-data.js"></script>'
@@ -174,6 +180,7 @@ def build_site_data() -> dict[str, object]:
     referral = read_json(ASSETS_DIR / "referral.json")
     footer_links = read_json(ASSETS_DIR / "footer-links.json")
     bin_overlays = read_json(ASSETS_DIR / "bin-overlays.json")
+    regions = read_json(ASSETS_DIR / "regions.json")
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "manifest": manifest,
@@ -181,6 +188,7 @@ def build_site_data() -> dict[str, object]:
         "referral": referral,
         "footerLinks": footer_links,
         "binOverlays": bin_overlays,
+        "regions": regions,
     }
 
 

@@ -12,6 +12,7 @@
   const isHome = page === "home";
   const isCredit = page === "credit";
   const isBin = page === "bin";
+  const isWithdrawal = page === "withdrawal";
   const isAbout = page === "about";
 
   function withBasePath(path) {
@@ -88,7 +89,9 @@
   }
 
   function normalizeCardStatus(value) {
-    return String(value || "").trim().toLowerCase();
+    return String(value || "")
+      .trim()
+      .toLowerCase();
   }
 
   function queueImageLoad(image, src) {
@@ -429,6 +432,7 @@
     ["卡片收藏", "index.html", isHome],
     ["现持信用卡", "credit.html", isCredit],
     ["卡 BIN 一览", "bin.html", isBin],
+    ["取款手续费", "withdrawal.html", isWithdrawal],
   ]
     .map(([label, href, active]) =>
       renderLink(label, href, `nav-link${active ? " is-active" : ""}`),

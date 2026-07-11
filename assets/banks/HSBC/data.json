@@ -33,7 +33,22 @@
       "ext": "png",
       "status": "active",
       "branch": "马鞍山分行",
-      "acquired": "2026-04"
+      "acquired": "2026-04",
+      "withdrawal": {
+        "overseas": {
+          "HSBC": "20HKD",
+          "BancNet": "20HKD",
+          "VISA": "40HKD",
+          "MasterCard": "40HKD",
+          "UnionPay": "50HKD"
+        },
+        "local": {
+          "HSBC": "0",
+          "VISA": "25HKD",
+          "MasterCard": "25HKD",
+          "UnionPay": "15HKD"
+        }
+      }
     },
     {
       "name": "HSBC Mastercard Debit 滙豐萬事達卡扣賬卡",
@@ -62,7 +77,17 @@
       "branch": "马鞍山分行",
       "acquired": "2026-04",
       "ftf": "0%",
-      "alt_image": "HSBC Mastercard Debit 滙豐萬事達卡扣賬卡v.png"
+      "alt_image": "HSBC Mastercard Debit 滙豐萬事達卡扣賬卡v.png",
+      "withdrawal": {
+        "overseas": {
+          "HSBC": "0",
+          "MasterCard": "40HKD"
+        },
+        "local": {
+          "HSBC": "0",
+          "MasterCard": "25HKD"
+        }
+      }
     }
   ]
 }

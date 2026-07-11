@@ -9,7 +9,7 @@ date: 2026-07-11
 
 ### 微信小程序
 
-跳转微信小程序，含银联中国、银联国际、Visa、万事达、运通
+跳转微信小程序，含银联中国、银联国际、VISA、万事达、运通
 
 - [境内卡组织权益报名](https://dqr.cn/okiJ5p/qNhhDNK?hasredirect=1&lid=7weyzr6q3dbthqo1e&rlid=7weyzr6q3dbthqo1e)
 
@@ -28,10 +28,13 @@ date: 2026-07-11
 ## 卡组织官网
 
 - [万事达](https://www.mastercard.com.cn/zh-cn.html)
+- [VISA 汇率](https://www.visa.cn/support/consumer/travel-support/exchange-rate-calculator.html)
+- [万事达汇率](https://www.mastercard.com.cn/zh-cn/personal/get-support/convert-currency.html)
+- [银联汇率](https://www.unionpayintl.com/cn/rate/)
 
 ## 卡组织等级
 
-|  等级定位  | Visa（维萨） | Mastercard（万事达） | American Express（运通） |   <    | UnionPay（银联） |   JCB    |
+|  等级定位  | VISA（维萨） | Mastercard（万事达） | American Express（运通） |   <    | UnionPay（银联） |   JCB    |
 | :--------: | :----------: | :------------------: | :----------------------: | :----: | :--------------: | :------: |
 | **顶级卡** |   Infinite   | World Elite / Legend |        Centurion         |  Icon  |     Diamond      | Ultimate |
 | **高端卡** |  Signature   |   World / Titanium   |            ^             |   ^    |        ^         |    ^     |

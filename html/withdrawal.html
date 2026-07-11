@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>取款手续费</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/withdrawal.css" />
+  </head>
+
+  <body class="withdrawal-page" data-page="withdrawal">
+    <div id="siteNav"></div>
+    <header class="site-header">
+      <section class="hero" id="top">
+        <div>
+          <h1>取款手续费</h1>
+        </div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="withdrawal-filter-row" aria-label="筛选">
+        <div class="select-wrap withdrawal-region-picker" id="withdrawalRegionPicker">
+          <span>取款地区</span>
+          <button
+            class="withdrawal-region-trigger"
+            id="withdrawalRegionTrigger"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-controls="withdrawalRegionOptions"
+          ></button>
+          <div
+            class="withdrawal-region-options"
+            id="withdrawalRegionOptions"
+            role="listbox"
+            aria-label="取款地区选项"
+            hidden
+          ></div>
+        </div>
+      </section>
+
+      <div
+        class="withdrawal-summary"
+        id="withdrawalSummary"
+        aria-live="polite"
+      ></div>
+
+      <div class="table-wrap withdrawal-table-wrap">
+        <table class="withdrawal-table">
+          <thead>
+            <tr>
+              <th>卡面</th>
+              <th>卡名</th>
+              <th>发行方</th>
+              <th>FTF</th>
+              <th>本地取款</th>
+              <th>海外取款</th>
+            </tr>
+          </thead>
+          <tbody id="withdrawalTableBody"></tbody>
+        </table>
+      </div>
+      <ul class="withdrawal-note">
+        <li>海外銀行可能會徵收附加費。</li>
+        <li>
+          HSBC One ATM Card
+          滙豐One自動櫃員機卡經【澳洲、巴林、孟加拉、百慕達、中國大陸、埃及、印度、印尼、澳門、馬來西亞、馬耳他、毛里裘斯、阿曼、菲律賓、卡塔爾、沙特阿拉伯、新加坡、斯里蘭卡、阿拉伯聯合酋長國、英國、越南】的滙豐海外ATM提款，滙豐另外會收取1%之兌換手續費。在上述地區以外的HSBC網絡的提款將會經卡组织網絡處理。
+        </li>
+      </ul>
+    </main>
+
+    <template id="withdrawalRowTemplate">
+      <tr>
+        <td class="withdrawal-image-cell"><img alt="" loading="lazy" /></td>
+        <td class="withdrawal-name-cell"></td>
+        <td class="withdrawal-issuer-cell"></td>
+        <td class="withdrawal-ftf-cell"></td>
+        <td class="withdrawal-fee-cell withdrawal-local-cell"></td>
+        <td class="withdrawal-fee-cell withdrawal-overseas-cell"></td>
+      </tr>
+    </template>
+
+    <div id="siteFooter"></div>
+    <script src="js/common.js"></script>
+    <script src="js/withdrawal.js"></script>
+  </body>
+</html>

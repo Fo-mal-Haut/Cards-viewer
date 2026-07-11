@@ -1,0 +1,196 @@
+.withdrawal-page {
+  overflow-x: hidden;
+}
+
+.withdrawal-filter-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.withdrawal-filter-row .select-wrap {
+  flex: 0 1 280px;
+}
+
+.withdrawal-region-picker {
+  position: relative;
+}
+
+.withdrawal-region-trigger {
+  min-width: 150px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.withdrawal-region-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 30;
+  display: grid;
+  width: min(280px, calc(100vw - 24px));
+  max-height: 320px;
+  padding: 6px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.withdrawal-region-options[hidden] {
+  display: none;
+}
+
+.withdrawal-region-option {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.withdrawal-region-option:hover,
+.withdrawal-region-option:focus-visible,
+.withdrawal-region-option.is-active {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-strong);
+  outline: none;
+}
+
+.withdrawal-summary {
+  margin: 0 0 20px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.withdrawal-summary p {
+  margin: 0;
+}
+
+.withdrawal-summary ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.withdrawal-summary li + li {
+  margin-top: 4px;
+}
+
+.withdrawal-note {
+  margin: -8px 0 28px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.withdrawal-table-wrap {
+  margin-bottom: 28px;
+  overflow: auto;
+}
+
+.withdrawal-table {
+  width: 100%;
+  min-width: 1060px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.withdrawal-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 760;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.withdrawal-table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.withdrawal-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.withdrawal-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.withdrawal-image-cell {
+  width: 170px;
+  min-width: 170px;
+}
+
+.withdrawal-image-cell img {
+  display: block;
+  width: 150px;
+  height: 94px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+
+.withdrawal-name-cell {
+  min-width: 250px;
+  max-width: 330px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.withdrawal-issuer-cell {
+  min-width: 170px;
+  line-height: 1.5;
+}
+
+.withdrawal-issuer-cell .bank-name-inline {
+  width: 100%;
+}
+
+.withdrawal-issuer-cell .bank-logo-inline {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.withdrawal-ftf-cell {
+  min-width: 90px;
+  white-space: nowrap;
+}
+
+.withdrawal-fee-cell {
+  min-width: 190px;
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.withdrawal-fee-line {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .withdrawal-filter-row .select-wrap {
+    flex: 1 1 220px;
+  }
+
+  .withdrawal-table {
+    min-width: 1040px;
+  }
+}

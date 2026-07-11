@@ -10,7 +10,7 @@
   },
   "cards": [
     {
-      "name": "农行系列卡普卡",
+      "name": "青绿借记卡（普卡）",
       "type": "Debit",
       "organization": "UnionPay",
       "tier": "Standard",
