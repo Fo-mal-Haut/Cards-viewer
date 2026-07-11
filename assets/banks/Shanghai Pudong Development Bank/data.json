@@ -22,6 +22,20 @@
       "status": "active",
       "acquired": "2026-06-22",
       "branch": "上海分行第一营业部"
+    },
+    {
+      "name": "布达拉宫卡-卡面三",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "621792",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-07-10",
+      "branch": "拉萨分行营业部"
     }
   ]
 }

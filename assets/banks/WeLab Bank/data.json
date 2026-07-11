@@ -27,11 +27,12 @@
         "SGD",
         "CHF"
       ],
-      "desc": "横版卡面右上角有GLOBAL WALLET字样。",
-      "benefit": "",
+      "desc": "横版卡面右上角有GLOBAL WALLET字样。\nhttps://www.welab.bank/zh-CN/feature/welab-global-wallet/\n访问：https://www.welab.bank/zh/legal/download-documents/ 中“一般文件”>“WeLab Bank一般服務收費”以查看收费。",
+      "benefit": "暂时有1%回赠。",
       "ext": "png",
       "status": "active",
       "acquired": "2026-06",
+      "ftf": "0%",
       "alt_image": "WeLab Global Wallet Debit Card v.png"
     }
   ]
