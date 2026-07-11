@@ -1307,9 +1307,9 @@ body[data-page="home"] #stats {
 }
 
 .card-modal-close {
-  position: absolute;
+  position: sticky;
   top: 14px;
-  right: 14px;
+  margin: 0 0 -38px auto;
   z-index: 3;
   display: grid;
   width: 38px;
@@ -1806,11 +1806,6 @@ body[data-page="home"] #stats {
   .stat strong {
     font-size: 18px;
     line-height: 1.1;
-  }
-
-  .stat span {
-    font-size: 11px;
-    line-height: 1.2;
   }
 
   .section-heading {
