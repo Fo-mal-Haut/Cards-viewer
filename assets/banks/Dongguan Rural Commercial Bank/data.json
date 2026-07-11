@@ -1,0 +1,28 @@
+{
+  "bank": {
+    "native_name": "东莞农村商业银行",
+    "english_name": "Dongguan Rural Commercial Bank",
+    "region": "CN",
+    "url": "https://www.drcbank.com",
+    "tag": "rural",
+    "province": "广东",
+    "logo": "favicon.ico"
+  },
+  "cards": [
+    {
+      "name": "信通卡普卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623038",
+      "currency": ["CNY"],
+      "desc": "Apple Pay卡面为旧卡面。",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "active",
+      "acquired": "2026-06-22",
+      "branch": "万江支行万江支行营业部",
+      "alt_image": "东莞农商银行普通借记卡.png"
+    }
+  ]
+}

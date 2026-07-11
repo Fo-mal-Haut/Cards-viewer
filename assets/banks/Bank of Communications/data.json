@@ -1,0 +1,27 @@
+{
+  "bank": {
+    "native_name": "交通银行",
+    "english_name": "Bank of Communications",
+    "region": "CN",
+    "url": "https://www.bankcomm.com",
+    "tag": "state",
+    "province": "上海",
+    "logo": "favicon.ico"
+  },
+  "cards": [
+    {
+      "name": "太平洋马年贺岁卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "622262",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-07-05",
+      "branch": "广东省分行东莞分行营业部"
+    }
+  ]
+}

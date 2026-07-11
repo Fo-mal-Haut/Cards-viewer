@@ -1,0 +1,100 @@
+{
+  "bank": {
+    "native_name": "中信银行",
+    "english_name": "China Citic Bank",
+    "region": "CN",
+    "url": "http://www.citicbank.com",
+    "tag": "stock",
+    "province": "北京",
+    "logo": "logo.gif"
+  },
+  "cards": [
+    {
+      "name": "中信银行万事达人民币美元双币世界借记卡",
+      "type": "Debit",
+      "organization": "Mastercard",
+      "tier": "World",
+      "bin": "559166",
+      "currency": ["CNY", "USD"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "active",
+      "acquired": "2026-05",
+      "branch": "广州分行营业部",
+      "alt_image": "中信银行万事达人民币美元双币世界借记卡v.jpg"
+    },
+    {
+      "name": "VISA白金卡",
+      "type": "Debit",
+      "organization": "VISA",
+      "tier": "Platinum",
+      "bin": "438576",
+      "currency": ["CNY", "USD"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "inactive",
+      "acquired": "2026-07-05",
+      "alt_image": ""
+    },
+    {
+      "name": "冰雪主题金卡薪享卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Gold",
+      "bin": "621773",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "inactive",
+      "acquired": "2026-05",
+      "alt_image": "冰雪主题金卡薪享卡v.png"
+    },
+    {
+      "name": "冰雪主题白金卡薪享卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Platinum",
+      "bin": "621768",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "active",
+      "acquired": "2026-05",
+      "branch": "广州分行东莞分行东莞万江支行",
+      "alt_image": "冰雪主题白金卡薪享卡v.png"
+    },
+    {
+      "name": "美国运通金卡借记卡",
+      "type": "Debit",
+      "organization": "AMEX",
+      "tier": "Gold",
+      "bin": "377138",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-05",
+      "branch": "广州分行东莞分行东莞万江支行",
+      "alt_image": "美国运通金卡借记卡v.png"
+    },
+    {
+      "name": "中信银行麦当劳联名借记卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Gold",
+      "bin": "621773",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "inactive",
+      "acquired": "2026-05",
+      "url": "https://wap.bank.ecitic.com/NMBFOServer/MobileBankWeb/?index=DebitCard.ApplyDebitCard.Index&ACCNOID=0000000000&cardType=6997754187945672704697a6e4a54356957584b&CHANLNO=WBMC01"
+    }
+  ]
+}

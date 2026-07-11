@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>开户邀请</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/referral.css" />
+  </head>
+
+  <body data-page="referral">
+    <div id="siteNav"></div>
+    <header class="site-header">
+      <section class="hero" id="top">
+        <div>
+          <h1>开户邀请</h1>
+        </div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="search-row" aria-label="搜索">
+        <label class="search-box" for="referralSearchInput">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="referralSearchInput"
+            type="search"
+            placeholder="搜索银行、邀请码、描述"
+            autocomplete="off"
+          />
+        </label>
+      </section>
+
+      <div class="table-wrap">
+        <table class="referral">
+          <thead>
+            <tr>
+              <th>银行或金融机构</th>
+              <th>邀请码</th>
+              <th>邀请链接</th>
+              <th>描述</th>
+            </tr>
+          </thead>
+          <tbody id="referralTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <template id="referralRowTemplate">
+      <tr>
+        <td class="referral-bank-cell"></td>
+        <td class="referral-invitation-cell"></td>
+        <td class="referral-url-cell"></td>
+        <td class="referral-desc-cell"></td>
+      </tr>
+    </template>
+
+    <div id="siteFooter"></div>
+    <script src="js/common.js"></script>
+    <script src="js/referral.js"></script>
+  </body>
+</html>

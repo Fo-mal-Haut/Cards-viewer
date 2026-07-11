@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>现持信用卡</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/credit.css" />
+  </head>
+
+  <body data-page="credit">
+    <div id="siteNav"></div>
+    <header class="site-header">
+      <section class="hero" id="top">
+        <div>
+          <h1>现持信用卡</h1>
+        </div>
+        <div class="stats" id="stats" aria-label="总授信"></div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="search-row" aria-label="搜索">
+        <label class="search-box" for="tableSearchInput">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="tableSearchInput"
+            type="search"
+            placeholder="搜索"
+            autocomplete="off"
+          />
+        </label>
+      </section>
+
+      <section class="filter-row credit-filter-row" aria-label="筛选">
+        <label class="select-wrap" for="creditIssuerFilter">
+          <span>发行方</span>
+          <select id="creditIssuerFilter">
+            <option value="all">全部发行方</option>
+          </select>
+        </label>
+        <label class="select-wrap" for="creditOrganizationFilter">
+          <span>卡组织</span>
+          <select id="creditOrganizationFilter">
+            <option value="all">全部卡组织</option>
+          </select>
+        </label>
+        <label class="select-wrap" for="creditRegionFilter">
+          <span>地区</span>
+          <select id="creditRegionFilter">
+            <option value="all">全部地区</option>
+          </select>
+        </label>
+      </section>
+
+      <div class="table-wrap">
+        <table class="credit">
+          <thead>
+            <tr>
+              <th>卡面</th>
+              <th>卡名</th>
+              <th>卡 BIN</th>
+              <th>卡组织</th>
+              <th>等级</th>
+              <th>发行方</th>
+              <th>地区</th>
+              <th>额度</th>
+              <th>账单日</th>
+              <th>还款日</th>
+              <th>年费</th>
+              <th>FTF</th>
+              <th>权益</th>
+            </tr>
+          </thead>
+          <tbody id="creditTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <template id="creditRowTemplate">
+      <tr>
+        <td class="card-image-cell">
+          <img alt="" loading="lazy" />
+        </td>
+        <td class="card-name-cell"></td>
+        <td class="card-bin-cell"></td>
+        <td class="card-organization-cell"></td>
+        <td class="card-tier-cell"></td>
+        <td class="card-issuer-cell"></td>
+        <td class="card-region-cell"></td>
+        <td class="card-limit-cell"></td>
+        <td class="card-billing-day-cell"></td>
+        <td class="card-due-day-cell"></td>
+        <td class="card-annual-fee-cell"></td>
+        <td class="card-ftf-cell"></td>
+        <td class="card-benefit-cell"></td>
+      </tr>
+    </template>
+
+    <div class="image-lightbox" id="imageLightbox" hidden>
+      <button
+        class="image-lightbox-backdrop"
+        type="button"
+        data-close-lightbox
+        aria-label="关闭大图"
+      ></button>
+      <button
+        class="image-lightbox-close"
+        type="button"
+        data-close-lightbox
+        aria-label="关闭大图"
+      >
+        ×
+      </button>
+      <img id="lightboxImage" alt="" />
+    </div>
+
+    <div id="siteFooter"></div>
+    <script src="js/common.js"></script>
+    <script src="js/currency.js"></script>
+    <script src="js/batch.js"></script>
+    <script src="js/credit.js"></script>
+  </body>
+</html>

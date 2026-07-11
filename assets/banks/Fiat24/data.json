@@ -1,0 +1,26 @@
+{
+  "bank": {
+    "native_name": "Fiat 24",
+    "english_name": "Fiat 24",
+    "region": "CH",
+    "url": "https://www.fiat24.com",
+    "tag": "digital",
+    "logo": "apple-touch-icon.png"
+  },
+  "cards": [
+    {
+      "name": "Fiat24 Bitget Wallet Standard",
+      "type": "Debit",
+      "organization": "Mastercard",
+      "tier": "Standard",
+      "bin": "548108",
+      "currency": ["USD", "EUR", "CHF", "CNY"],
+      "desc": "此卡发行方实际为US的SHAZAM, INC.",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-05",
+      "virtual": true
+    }
+  ]
+}

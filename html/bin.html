@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>卡 BIN 一览</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/bin.css" />
+  </head>
+
+  <body data-page="bin">
+    <div id="siteNav"></div>
+    <header class="site-header">
+      <section class="hero" id="top">
+        <div>
+          <h1>卡 BIN 一览</h1>
+        </div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <div class="table-wrap">
+        <table class="credit bin-table">
+          <thead>
+            <tr>
+              <th>卡 BIN</th>
+              <th>卡组织</th>
+              <th>等级</th>
+              <th>类型</th>
+              <th>发行方</th>
+              <th>卡片名称</th>
+            </tr>
+          </thead>
+          <tbody id="binTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <template id="binRowTemplate">
+      <tr>
+        <td class="bin-code-cell"></td>
+        <td class="bin-organization-cell"></td>
+        <td class="bin-tier-cell"></td>
+        <td class="bin-type-cell"></td>
+        <td class="bin-issuer-cell"></td>
+        <td class="bin-name-cell"></td>
+      </tr>
+    </template>
+
+    <div id="siteFooter"></div>
+    <script src="js/common.js"></script>
+    <script src="js/bin.js"></script>
+  </body>
+</html>

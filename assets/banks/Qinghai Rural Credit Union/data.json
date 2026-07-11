@@ -1,0 +1,27 @@
+{
+  "bank": {
+    "native_name": "青海省农村信用社联合社",
+    "english_name": "Qinghai Rural Credit Union",
+    "region": "CN",
+    "url": "https://www.qhrccb.com",
+    "tag": "rural",
+    "province": "青海",
+    "logo": "logo.svg"
+  },
+  "cards": [
+    {
+      "name": "西宁农商银行2020年庚子年子庶丰登借记卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623017",
+      "currency": ["CNY"],
+      "desc": "无CVV。",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "cancelled",
+      "branch": "西宁农商银行生物园区支行",
+      "acquired": "2026-06-29"
+    }
+  ]
+}

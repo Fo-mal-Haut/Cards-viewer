@@ -1,0 +1,41 @@
+{
+  "bank": {
+    "native_name": "中国建设银行",
+    "english_name": "China Construction Bank",
+    "region": "CN",
+    "url": "https://www.ccb.com",
+    "tag": "state",
+    "province": "北京",
+    "logo": "favicon.ico"
+  },
+  "cards": [
+    {
+      "name": "岁岁平安卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "621700",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-06-22",
+      "branch": "深圳市分行深圳分行营业部"
+    },
+    {
+      "name": "银联储蓄卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623644",
+      "currency": ["CNY"],
+      "desc": "建行钱包",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-06-22",
+      "virtual": true
+    }
+  ]
+}

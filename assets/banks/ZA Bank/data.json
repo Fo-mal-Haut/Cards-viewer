@@ -1,0 +1,25 @@
+{
+  "bank": {
+    "native_name": "眾安銀行",
+    "english_name": "ZA Bank",
+    "region": "HK",
+    "url": "http://bank.za.group",
+    "tag": "digital",
+    "logo": "logo-40.svg"
+  },
+  "cards": [
+    {
+      "name": "ZA Card",
+      "type": "Debit",
+      "organization": "VISA",
+      "tier": "Classic",
+      "bin": "448060",
+      "currency": ["HKD"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-04"
+    }
+  ]
+}

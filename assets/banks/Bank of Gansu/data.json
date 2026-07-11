@@ -1,0 +1,27 @@
+{
+  "bank": {
+    "native_name": "甘肃银行",
+    "english_name": "Bank of Gansu",
+    "region": "CN",
+    "url": "https://www.gsbankchina.com",
+    "tag": "city",
+    "province": "甘肃",
+    "logo": "logo.svg"
+  },
+  "cards": [
+    {
+      "name": "神舟兴陇借记卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623182",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "cancelled",
+      "branch": "兰州新区支行",
+      "acquired": "2026-07-04"
+    }
+  ]
+}

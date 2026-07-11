@@ -1,0 +1,26 @@
+{
+  "bank": {
+    "native_name": "恒丰银行",
+    "english_name": "Hengfeng Bank",
+    "region": "CN",
+    "url": "https://www.hfbank.com.cn",
+    "tag": "city",
+    "province": "山东",
+    "logo": "1_2675162926.jpg"
+  },
+  "cards": [
+    {
+      "name": "泉城city卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623078",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "inactive",
+      "acquired": "2026-07-12"
+    }
+  ]
+}

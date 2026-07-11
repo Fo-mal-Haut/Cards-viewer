@@ -1,0 +1,27 @@
+{
+  "bank": {
+    "native_name": "中国工商银行（亚洲）",
+    "english_name": "Industrial and Commercial Bank of China (Asia)",
+    "region": "HK",
+    "url": "http://www.icbcasia.com",
+    "tag": "state",
+    "logo": "apple-touch-icon.png",
+    "parent": "Industrial and Commercial Bank of China"
+  },
+  "cards": [
+    {
+      "name": "工銀理財通綜合借記卡（港幣）",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "622949",
+      "currency": ["HKD"],
+      "desc": "",
+      "benefit": "內地取款，免手續費，每日限額為等值港幣20,000元。\n透過澳門、內地或海外的「銀通」或「銀聯」網路的自動櫃員機提取現金均需收取手續費，分別為港幣10元、港幣或人民幣15元。\n除人民幣帳戶可以在中國內地提取人民幣外，於香港以外地方提取現金，只能於港幣帳戶支出並兌取當地貨幣。\n透過內地中國工商銀行櫃員機進行以港幣結算的櫃員機取款交易，內地中國工商銀行會按交易當時之匯率把提取金額兌換為美元，再由中國工商銀行（亞洲）按交易當時之匯率兌換為港幣。\n於貼有「銀通」標誌櫃員機取款，每次最低提款額為港幣500元，經本行櫃員機取款則不受此限制。",
+      "ext": "png",
+      "status": "active",
+      "branch": "远程视频柜员业务中心(317)",
+      "acquired": "2026-06-25"
+    }
+  ]
+}

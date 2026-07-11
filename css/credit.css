@@ -1,0 +1,211 @@
+.hero h1 {
+  max-width: 720px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: clamp(36px, 7vw, 76px);
+  line-height: 0.98;
+}
+
+.hero .stats {
+  align-self: start;
+}
+
+.credit-filter-row {
+  margin-bottom: 20px;
+}
+
+.credit-filter-row .select-wrap {
+  flex: 1 1 180px;
+  min-width: 180px;
+}
+
+@media (min-width: 821px) {
+  .hero .stats {
+    justify-self: end;
+  }
+}
+
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.credit {
+  width: 100%;
+  min-width: 1400px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.credit thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 760;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.credit thead th:first-child {
+  left: 0;
+  z-index: 4;
+  width: 170px;
+  min-width: 170px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.32);
+}
+
+.credit thead th:nth-child(11) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.credit tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.credit tbody td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  width: 170px;
+  min-width: 170px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.24);
+}
+
+.credit tbody td:nth-child(11) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.credit tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.credit tbody tr:hover td:first-child {
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.credit tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.card-image-cell {
+  width: 170px;
+}
+
+.card-image-cell img {
+  display: block;
+  width: 150px;
+  height: 94px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+  cursor: zoom-in;
+}
+
+.card-name-cell,
+.card-benefit-cell {
+  min-width: 180px;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.card-bin-cell,
+.card-organization-cell,
+.card-tier-cell,
+.card-region-cell,
+.card-limit-cell,
+.card-billing-day-cell,
+.card-due-day-cell,
+.card-ftf-cell {
+  white-space: nowrap;
+}
+
+.card-issuer-cell .bank-name-inline {
+  width: 100%;
+}
+
+.card-issuer-cell {
+  min-width: 160px;
+}
+
+.card-annual-fee-cell {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.limit-list {
+  display: grid;
+  gap: 4px;
+}
+
+.limit-item {
+  white-space: nowrap;
+}
+
+.stat-credit-total {
+  min-width: 260px;
+}
+
+.stat-credit-total strong {
+  font-size: 18px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.card-benefit-cell {
+  min-width: 320px;
+  color: var(--muted);
+}
+
+.empty-state {
+  padding: 28px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .hero .stats {
+    width: 100%;
+  }
+
+  .stat-credit-total {
+    min-width: 0;
+  }
+
+  .stat-credit-total strong {
+    font-size: 16px;
+  }
+
+  .credit {
+    min-width: 1480px;
+  }
+
+  .credit-filter-row .select-wrap {
+    min-width: 140px;
+  }
+}
+
+.organization-icon {
+  display: inline-block;
+  width: 40px;
+  object-fit: contain;
+  vertical-align: middle;
+}

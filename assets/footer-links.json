@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "title": "文档",
+      "links": [
+        {
+          "label": "卡组织权益",
+          "url": "/docs/organization.html"
+        },
+        {
+          "label": "开户邀请",
+          "url": "/referral.html"
+        },
+        {
+          "label": "卡片申请（中国大陆）",
+          "url": "/docs/application.html"
+        },
+        {
+          "label": "香港开户指南",
+          "url": "/docs/open-an-account-in-hk.html"
+        }
+      ]
+    },
+    {
+      "title": "常用相关链接",
+      "links": [
+        {
+          "label": "Hibank",
+          "url": "https://hi.my-api.cn/cities"
+        },
+        {
+          "label": "卡 BIN 查询",
+          "url": "https://www.lingchenxi.top/Bincheck/"
+        },
+        {
+          "label": "出国该刷哪张卡",
+          "url": "https://www.kylc.com/huilv/whichcard.html?amt=10000"
+        },
+        {
+          "label": "更多相关链接...",
+          "url": "/link.html"
+        }
+      ]
+    },
+    {
+      "title": "论坛",
+      "links": [
+        {
+          "label": "我爱卡",
+          "url": "https://www.51credit.com/"
+        },
+        {
+          "label": "数字居民论坛",
+          "url": "https://www.shuzijumin.com/"
+        },
+        {
+          "label": "美卡论坛",
+          "url": "https://www.uscardforum.com/"
+        }
+      ]
+    }
+  ]
+}

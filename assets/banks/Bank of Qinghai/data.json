@@ -1,0 +1,27 @@
+{
+  "bank": {
+    "native_name": "青海银行",
+    "english_name": "Bank of Qinghai",
+    "region": "CN",
+    "url": "https://www.bankqh.com",
+    "tag": "city",
+    "province": "青海",
+    "logo": "lg.png"
+  },
+  "cards": [
+    {
+      "name": "三江借记卡普卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623599",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "active",
+      "branch": "高新区支行",
+      "acquired": "2026-06-29"
+    }
+  ]
+}

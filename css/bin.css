@@ -1,0 +1,238 @@
+.hero h1 {
+  max-width: 720px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: clamp(36px, 7vw, 76px);
+  line-height: 0.98;
+}
+
+.table-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.credit.bin-table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.bin-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 760;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.bin-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.32);
+}
+
+.bin-table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  color: var(--text);
+  font-size: 14px;
+  transition: background 180ms ease;
+}
+
+.bin-table tbody td:first-child {
+  --bin-code-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--bin-code-bg);
+  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.24);
+}
+
+.bin-table tbody .bin-tier-cell,
+.bin-table tbody .bin-name-cell {
+  --bin-code-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+  background: var(--bin-code-bg);
+}
+
+.bin-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface) 95%);
+}
+
+.bin-table tbody tr:hover td:first-child {
+  --bin-code-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%),
+      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%)
+    );
+}
+
+.bin-table tbody tr:hover .bin-tier-cell,
+.bin-table tbody tr:hover .bin-name-cell {
+  --bin-code-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%),
+      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%)
+    );
+}
+
+.bin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.bin-table tbody tr.tier-accent-gold td:first-child,
+.bin-table tbody tr.tier-accent-gold .bin-tier-cell,
+.bin-table tbody tr.tier-accent-gold .bin-name-cell {
+  --bin-code-bg:
+    radial-gradient(circle at 10% 14%, rgba(255, 204, 74, 0.3), transparent 34%),
+    radial-gradient(circle at 100% 84%, rgba(210, 138, 16, 0.22), transparent 42%),
+    radial-gradient(circle at 54% 100%, rgba(255, 235, 156, 0.16), transparent 46%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+}
+
+.bin-table tbody tr.tier-accent-platinum td:first-child,
+.bin-table tbody tr.tier-accent-platinum .bin-tier-cell,
+.bin-table tbody tr.tier-accent-platinum .bin-name-cell {
+  --bin-code-bg:
+    radial-gradient(circle at 14% 12%, rgba(226, 233, 240, 0.3), transparent 34%),
+    radial-gradient(circle at 100% 80%, rgba(112, 126, 145, 0.28), transparent 42%),
+    radial-gradient(circle at 55% 100%, rgba(214, 223, 232, 0.18), transparent 46%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+}
+
+.bin-table tbody tr.tier-accent-spectrum td:first-child,
+.bin-table tbody tr.tier-accent-spectrum .bin-tier-cell,
+.bin-table tbody tr.tier-accent-spectrum .bin-name-cell {
+  --bin-code-bg:
+    radial-gradient(circle at 8% 18%, rgba(255, 74, 74, 0.24), transparent 30%),
+    radial-gradient(circle at 100% 16%, rgba(35, 136, 255, 0.26), transparent 34%),
+    radial-gradient(circle at 86% 100%, rgba(26, 224, 151, 0.2), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(255, 174, 52, 0.18), transparent 34%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+}
+
+.bin-table tbody tr.tier-accent-diamond td:first-child,
+.bin-table tbody tr.tier-accent-diamond .bin-tier-cell,
+.bin-table tbody tr.tier-accent-diamond .bin-name-cell {
+  --bin-code-bg:
+    radial-gradient(circle at 10% 12%, rgba(62, 255, 240, 0.24), transparent 32%),
+    radial-gradient(circle at 100% 16%, rgba(94, 138, 255, 0.26), transparent 34%),
+    radial-gradient(circle at 82% 100%, rgba(210, 93, 255, 0.2), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(180, 250, 255, 0.18), transparent 34%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 94%, transparent),
+      color-mix(in srgb, var(--surface) 94%, transparent)
+    );
+}
+
+.bin-table tbody tr.tier-accent-gold:hover td:first-child,
+.bin-table tbody tr.tier-accent-gold:hover .bin-tier-cell,
+.bin-table tbody tr.tier-accent-gold:hover .bin-name-cell,
+.bin-table tbody tr.tier-accent-platinum:hover td:first-child,
+.bin-table tbody tr.tier-accent-platinum:hover .bin-tier-cell,
+.bin-table tbody tr.tier-accent-platinum:hover .bin-name-cell,
+.bin-table tbody tr.tier-accent-spectrum:hover td:first-child,
+.bin-table tbody tr.tier-accent-spectrum:hover .bin-tier-cell,
+.bin-table tbody tr.tier-accent-spectrum:hover .bin-name-cell,
+.bin-table tbody tr.tier-accent-diamond:hover td:first-child,
+.bin-table tbody tr.tier-accent-diamond:hover .bin-tier-cell,
+.bin-table tbody tr.tier-accent-diamond:hover .bin-name-cell {
+  filter: brightness(1.02);
+}
+
+.bin-code-cell,
+.bin-organization-cell,
+.bin-tier-cell,
+.bin-type-cell {
+  white-space: nowrap;
+}
+
+.bin-code-cell,
+.bin-organization-cell,
+.bin-type-cell {
+  min-width: 64px;
+  width: 64px;
+}
+
+.bin-tier-cell {
+  min-width: 84px;
+  width: 84px;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.bin-issuer-cell,
+.bin-name-cell {
+  min-width: 180px;
+}
+
+.bin-issuer-cell {
+  min-width: 132px;
+  max-width: 148px;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.bin-issuer-cell .bank-logo-inline {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: text-bottom;
+  object-fit: contain;
+}
+
+.bin-name-cell {
+  white-space: pre-line;
+  line-height: 1.7;
+}
+
+.organization-icon {
+  display: inline-block;
+  width: 40px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.empty-state {
+  padding: 28px;
+  color: var(--muted);
+  text-align: center;
+}

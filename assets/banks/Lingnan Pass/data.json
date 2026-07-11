@@ -1,0 +1,40 @@
+{
+  "bank": {
+    "native_name": "岭南通",
+    "english_name": "Lingnan Pass",
+    "region": "CN",
+    "url": "https://www.lingnanpass.com",
+    "tag": "",
+    "province": "广东",
+    "logo": "logo.png"
+  },
+  "cards": [
+    {
+      "name": "岭南通·羊城通",
+      "type": "Transit",
+      "organization": "China T-Union",
+      "tier": "",
+      "bin": "310487",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "",
+      "virtual": true
+    },
+    {
+      "name": "岭南通·羊城通联名全国交通卡-标准卡（明日方舟余款）",
+      "type": "Transit",
+      "organization": "China T-Union",
+      "tier": "",
+      "bin": "310487",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "jpg",
+      "status": "active",
+      "acquired": "2025-11-20"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>{title}</title>
+    <link
+      rel="icon"
+      href="{base_path}assets/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="{base_path}css/common.css" />
+    <link rel="stylesheet" href="{base_path}css/article.css" />
+  </head>
+
+  <body
+    data-page="{page}"
+    data-base-path="{base_path}"
+    data-root-path="{root_path}"
+  >
+    <div id="siteNav"></div>
+    <header class="site-header">
+      <section class="hero" id="top">
+        <div>
+          <h1>{title}</h1>
+          {metadata}
+        </div>
+      </section>
+    </header>
+
+    <main class="layout">
+      <div class="markdown-layout">
+        <button
+          class="markdown-toc-fab"
+          type="button"
+          aria-expanded="false"
+          aria-controls="markdownTocDrawer"
+        >
+          目录
+        </button>
+        <aside
+          class="markdown-toc-drawer"
+          id="markdownTocDrawer"
+          aria-hidden="true"
+        >
+          <div class="markdown-toc-drawer-panel">
+            <button
+              class="markdown-toc-close"
+              type="button"
+              aria-label="关闭目录"
+            >
+              ×
+            </button>
+            {toc}
+          </div>
+        </aside>
+        <div class="markdown-toc-desktop">{toc}</div>
+        <article
+          class="markdown-page"
+          id="markdownContent"
+          aria-label="{title}内容"
+        >
+          {content}
+        </article>
+      </div>
+    </main>
+
+    <div id="siteFooter"></div>
+    <script src="{base_path}js/common.js"></script>
+    <script>
+      (() => {{
+        {{
+          const fab = document.querySelector(".markdown-toc-fab");
+          const drawer = document.querySelector("#markdownTocDrawer");
+          const closeButton = document.querySelector(".markdown-toc-close");
+          if (!fab || !drawer || !closeButton) return;
+
+          const setOpen = (open) => {{
+            {{
+              drawer.classList.toggle("is-open", open);
+              drawer.setAttribute("aria-hidden", String(!open));
+              fab.setAttribute("aria-expanded", String(open));
+            }}
+          }};
+
+          fab.addEventListener("click", () =>
+            setOpen(!drawer.classList.contains("is-open")),
+          );
+          closeButton.addEventListener("click", () => setOpen(false));
+          drawer.addEventListener("click", (event) => {{
+            {{
+              if (event.target === drawer) setOpen(false);
+            }}
+          }});
+          document.querySelectorAll(".markdown-toc a").forEach((link) => {{
+            {{
+              link.addEventListener("click", (event) => {{
+                {{
+                  const targetId = link.getAttribute("href")?.slice(1);
+                  const target = targetId
+                    ? document.getElementById(targetId)
+                    : null;
+                  if (target) {{
+                    event.preventDefault();
+                    history.pushState(null, "", `#${{targetId}}`);
+                    target.scrollIntoView({{
+                      behavior: "smooth",
+                      block: "start",
+                    }});
+                  }}
+                  setOpen(false);
+                }}
+              }});
+            }}
+          }});
+
+          document
+            .querySelectorAll("#markdownContent h1[id], #markdownContent h2[id], #markdownContent h3[id], #markdownContent h4[id], #markdownContent h5[id], #markdownContent h6[id]")
+            .forEach((heading) => {{
+              {{
+                heading.classList.add("markdown-heading-linkable");
+                heading.setAttribute("tabindex", "0");
+                const activateHeading = () => {{
+                  {{
+                    history.pushState(null, "", `#${{heading.id}}`);
+                    heading.scrollIntoView({{
+                      behavior: "smooth",
+                      block: "start",
+                    }});
+                  }}
+                }};
+                heading.addEventListener("click", (event) => {{
+                  {{
+                    if (event.target.closest("a")) return;
+                    activateHeading();
+                  }}
+                }});
+                heading.addEventListener("keydown", (event) => {{
+                  {{
+                    if (event.key === "Enter" || event.key === " ") {{
+                      event.preventDefault();
+                      activateHeading();
+                    }}
+                  }}
+                }});
+              }}
+            }});
+        }}
+      }})();
+    </script>
+  </body>
+</html>
