@@ -1,0 +1,26 @@
+{
+  "bank": {
+    "native_name": "中国民生银行",
+    "english_name": "China Minsheng Bank",
+    "region": "CN",
+    "url": "https://www.cmbc.com.cn/",
+    "tag": "stock",
+    "province": "北京",
+    "logo": "logo.svg"
+  },
+  "cards": [
+    {
+      "name": "民生山姆联名卡",
+      "type": "Credit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "625913",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-07"
+    }
+  ]
+}
