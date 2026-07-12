@@ -29,11 +29,42 @@
         "THB"
       ],
       "desc": "",
-      "benefit": "",
+      "benefit": "HSBC One ATM Card 滙豐One自動櫃員機卡經【澳洲、巴林、孟加拉、百慕達、中國大陸、埃及、印度、印尼、澳門、馬來西亞、馬耳他、毛里裘斯、阿曼、菲律賓、卡塔爾、沙特阿拉伯、新加坡、斯里蘭卡、阿拉伯聯合酋長國、英國、越南】的滙豐ATM提款外幣，滙豐另外會收取1%之兌換手續費。\n在上述地區以外的HSBC網絡的提款將會經卡组织網絡處理。\n經VISA網絡外幣→卡主貨幣，加上1.95%手續費；\nMastercard：外幣→美元→卡主貨幣，1.95%手續費。\nUnionPay：外幣→卡主貨幣，無手續費。",
       "ext": "png",
       "status": "active",
       "branch": "马鞍山分行",
       "acquired": "2026-04",
+      "withdrawal_exchange": {
+        "hsbc_atm_regions": [
+          "AU",
+          "BH",
+          "BD",
+          "BM",
+          "CN",
+          "EG",
+          "IN",
+          "ID",
+          "MO",
+          "MY",
+          "MT",
+          "MU",
+          "OM",
+          "PH",
+          "QA",
+          "SA",
+          "SG",
+          "LK",
+          "AE",
+          "GB",
+          "VN"
+        ],
+        "hsbc_atm_fee_percent": 1,
+        "card_networks": {
+          "VISA": 1.95,
+          "MasterCard": 1.95,
+          "UnionPay": 0
+        }
+      },
       "withdrawal": {
         "overseas": {
           "HSBC": "20HKD",

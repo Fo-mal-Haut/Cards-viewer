@@ -1,1057 +1,1257 @@
 {
-  "regions": [
-    {
-      "code": "AC",
-      "name": "\u963f\u68ee\u677e\u5c9b"
-    },
-    {
-      "code": "AD",
-      "name": "\u5b89\u9053\u5c14"
-    },
-    {
-      "code": "AE",
-      "name": "\u963f\u8054\u914b"
-    },
+  "continents": [
     {
       "code": "AF",
-      "name": "\u963f\u5bcc\u6c57"
-    },
-    {
-      "code": "AG",
-      "name": "\u5b89\u63d0\u74dc\u548c\u5df4\u5e03\u8fbe"
-    },
-    {
-      "code": "AI",
-      "name": "\u5b89\u572d\u62c9"
-    },
-    {
-      "code": "AL",
-      "name": "\u963f\u5c14\u5df4\u5c3c\u4e9a"
-    },
-    {
-      "code": "AM",
-      "name": "\u4e9a\u7f8e\u5c3c\u4e9a"
-    },
-    {
-      "code": "AO",
-      "name": "\u5b89\u54e5\u62c9"
-    },
-    {
-      "code": "AQ",
-      "name": "\u5357\u6781\u6d32"
-    },
-    {
-      "code": "AR",
-      "name": "\u963f\u6839\u5ef7"
-    },
-    {
-      "code": "AS",
-      "name": "\u7f8e\u5c5e\u8428\u6469\u4e9a"
-    },
-    {
-      "code": "AT",
-      "name": "\u5965\u5730\u5229"
-    },
-    {
-      "code": "AU",
-      "name": "\u6fb3\u5927\u5229\u4e9a"
-    },
-    {
-      "code": "AW",
-      "name": "\u963f\u9c81\u5df4"
-    },
-    {
-      "code": "AX",
-      "name": "\u5965\u5170\u7fa4\u5c9b"
-    },
-    {
-      "code": "AZ",
-      "name": "\u963f\u585e\u62dc\u7586"
-    },
-    {
-      "code": "BA",
-      "name": "\u6ce2\u65af\u5c3c\u4e9a\u548c\u9ed1\u585e\u54e5\u7ef4\u90a3"
-    },
-    {
-      "code": "BB",
-      "name": "\u5df4\u5df4\u591a\u65af"
-    },
-    {
-      "code": "BD",
-      "name": "\u5b5f\u52a0\u62c9\u56fd"
-    },
-    {
-      "code": "BE",
-      "name": "\u6bd4\u5229\u65f6"
-    },
-    {
-      "code": "BF",
-      "name": "\u5e03\u57fa\u7eb3\u6cd5\u7d22"
-    },
-    {
-      "code": "BG",
-      "name": "\u4fdd\u52a0\u5229\u4e9a"
-    },
-    {
-      "code": "BH",
-      "name": "\u5df4\u6797"
-    },
-    {
-      "code": "BI",
-      "name": "\u5e03\u9686\u8fea"
-    },
-    {
-      "code": "BJ",
-      "name": "\u8d1d\u5b81"
-    },
-    {
-      "code": "BL",
-      "name": "\u5723\u5df4\u6cf0\u52d2\u7c73"
-    },
-    {
-      "code": "BM",
-      "name": "\u767e\u6155\u5927"
-    },
-    {
-      "code": "BN",
-      "name": "\u6587\u83b1"
-    },
-    {
-      "code": "BO",
-      "name": "\u73bb\u5229\u7ef4\u4e9a"
-    },
-    {
-      "code": "BQ",
-      "name": "\u8377\u5c5e\u52a0\u52d2\u6bd4\u533a"
-    },
-    {
-      "code": "BR",
-      "name": "\u5df4\u897f"
-    },
-    {
-      "code": "BS",
-      "name": "\u5df4\u54c8\u9a6c"
-    },
-    {
-      "code": "BT",
-      "name": "\u4e0d\u4e39"
-    },
-    {
-      "code": "BV",
-      "name": "\u5e03\u97e6\u5c9b"
-    },
-    {
-      "code": "BW",
-      "name": "\u535a\u8328\u74e6\u7eb3"
-    },
-    {
-      "code": "BY",
-      "name": "\u767d\u4fc4\u7f57\u65af"
-    },
-    {
-      "code": "BZ",
-      "name": "\u4f2f\u5229\u5179"
-    },
-    {
-      "code": "CA",
-      "name": "\u52a0\u62ff\u5927"
-    },
-    {
-      "code": "CC",
-      "name": "\u79d1\u79d1\u65af\uff08\u57fa\u6797\uff09\u7fa4\u5c9b"
-    },
-    {
-      "code": "CD",
-      "name": "\u521a\u679c\uff08\u91d1\uff09"
-    },
-    {
-      "code": "CF",
-      "name": "\u4e2d\u975e\u5171\u548c\u56fd"
-    },
-    {
-      "code": "CG",
-      "name": "\u521a\u679c\uff08\u5e03\uff09"
-    },
-    {
-      "code": "CH",
-      "name": "\u745e\u58eb"
-    },
-    {
-      "code": "CI",
-      "name": "\u79d1\u7279\u8fea\u74e6"
-    },
-    {
-      "code": "CK",
-      "name": "\u5e93\u514b\u7fa4\u5c9b"
-    },
-    {
-      "code": "CL",
-      "name": "\u667a\u5229"
-    },
-    {
-      "code": "CM",
-      "name": "\u5580\u9ea6\u9686"
-    },
-    {
-      "code": "CN",
-      "name": "\u4e2d\u56fd\u5927\u9646"
-    },
-    {
-      "code": "CO",
-      "name": "\u54e5\u4f26\u6bd4\u4e9a"
-    },
-    {
-      "code": "CP",
-      "name": "\u514b\u5229\u73c0\u987f\u5c9b"
-    },
-    {
-      "code": "CR",
-      "name": "\u54e5\u65af\u8fbe\u9ece\u52a0"
-    },
-    {
-      "code": "CU",
-      "name": "\u53e4\u5df4"
-    },
-    {
-      "code": "CV",
-      "name": "\u4f5b\u5f97\u89d2"
-    },
-    {
-      "code": "CW",
-      "name": "\u5e93\u62c9\u7d22"
-    },
-    {
-      "code": "CX",
-      "name": "\u5723\u8bde\u5c9b"
-    },
-    {
-      "code": "CY",
-      "name": "\u585e\u6d66\u8def\u65af"
-    },
-    {
-      "code": "CZ",
-      "name": "\u6377\u514b"
-    },
-    {
-      "code": "DE",
-      "name": "\u5fb7\u56fd"
-    },
-    {
-      "code": "DG",
-      "name": "\u8fea\u6208\u52a0\u897f\u4e9a\u5c9b"
-    },
-    {
-      "code": "DJ",
-      "name": "\u5409\u5e03\u63d0"
-    },
-    {
-      "code": "DK",
-      "name": "\u4e39\u9ea6"
-    },
-    {
-      "code": "DM",
-      "name": "\u591a\u7c73\u5c3c\u514b"
-    },
-    {
-      "code": "DO",
-      "name": "\u591a\u7c73\u5c3c\u52a0\u5171\u548c\u56fd"
-    },
-    {
-      "code": "DZ",
-      "name": "\u963f\u5c14\u53ca\u5229\u4e9a"
-    },
-    {
-      "code": "EA",
-      "name": "\u4f11\u8fbe\u53ca\u6885\u5229\u5229\u4e9a"
-    },
-    {
-      "code": "EC",
-      "name": "\u5384\u74dc\u591a\u5c14"
-    },
-    {
-      "code": "EE",
-      "name": "\u7231\u6c99\u5c3c\u4e9a"
-    },
-    {
-      "code": "EG",
-      "name": "\u57c3\u53ca"
-    },
-    {
-      "code": "EH",
-      "name": "\u897f\u6492\u54c8\u62c9"
-    },
-    {
-      "code": "ER",
-      "name": "\u5384\u7acb\u7279\u91cc\u4e9a"
-    },
-    {
-      "code": "ES",
-      "name": "\u897f\u73ed\u7259"
-    },
-    {
-      "code": "ET",
-      "name": "\u57c3\u585e\u4fc4\u6bd4\u4e9a"
+      "name_zh": "非洲",
+      "name": "Africa",
+      "countries": [
+        {
+          "code": "DZ",
+          "name_zh": "阿尔及利亚",
+          "name": "Algeria",
+          "currency": "DZD",
+          "currency_zh": "阿尔及利亚第纳尔"
+        },
+        {
+          "code": "EG",
+          "name_zh": "埃及",
+          "name": "Egypt",
+          "currency": "EGP",
+          "currency_zh": "埃及镑"
+        },
+        {
+          "code": "LY",
+          "name_zh": "利比亚",
+          "name": "Libya",
+          "currency": "LYD",
+          "currency_zh": "利比亚第纳尔"
+        },
+        {
+          "code": "MA",
+          "name_zh": "摩洛哥",
+          "name": "Morocco",
+          "currency": "MAD",
+          "currency_zh": "摩洛哥迪拉姆"
+        },
+        {
+          "code": "MR",
+          "name_zh": "毛里塔尼亚",
+          "name": "Mauritania",
+          "currency": "MRU",
+          "currency_zh": "毛里塔尼亚乌吉亚"
+        },
+        {
+          "code": "SD",
+          "name_zh": "苏丹",
+          "name": "Sudan",
+          "currency": "SDG",
+          "currency_zh": "苏丹镑"
+        },
+        {
+          "code": "TN",
+          "name_zh": "突尼斯",
+          "name": "Tunisia",
+          "currency": "TND",
+          "currency_zh": "突尼斯第纳尔"
+        },
+        {
+          "code": "AO",
+          "name_zh": "安哥拉",
+          "name": "Angola",
+          "currency": "AOA",
+          "currency_zh": "安哥拉宽扎"
+        },
+        {
+          "code": "BF",
+          "name_zh": "布基纳法索",
+          "name": "Burkina Faso",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "BI",
+          "name_zh": "布隆迪",
+          "name": "Burundi",
+          "currency": "BIF",
+          "currency_zh": "布隆迪法郎"
+        },
+        {
+          "code": "BJ",
+          "name_zh": "贝宁",
+          "name": "Benin",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "BW",
+          "name_zh": "博茨瓦纳",
+          "name": "Botswana",
+          "currency": "BWP",
+          "currency_zh": "博茨瓦纳普拉"
+        },
+        {
+          "code": "CD",
+          "name_zh": "刚果（金）",
+          "name": "Congo - Kinshasa",
+          "currency": "CDF",
+          "currency_zh": "刚果法郎"
+        },
+        {
+          "code": "CF",
+          "name_zh": "中非共和国",
+          "name": "Central African Republic",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "CG",
+          "name_zh": "刚果（布）",
+          "name": "Congo - Brazzaville",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "CI",
+          "name_zh": "科特迪瓦",
+          "name": "Côte d’Ivoire",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "CM",
+          "name_zh": "喀麦隆",
+          "name": "Cameroon",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "DJ",
+          "name_zh": "吉布提",
+          "name": "Djibouti",
+          "currency": "DJF",
+          "currency_zh": "吉布提法郎"
+        },
+        {
+          "code": "ER",
+          "name_zh": "厄立特里亚",
+          "name": "Eritrea",
+          "currency": "ERN",
+          "currency_zh": "厄立特里亚纳克法"
+        },
+        {
+          "code": "ET",
+          "name_zh": "埃塞俄比亚",
+          "name": "Ethiopia",
+          "currency": "ETB",
+          "currency_zh": "埃塞俄比亚比尔"
+        },
+        {
+          "code": "GA",
+          "name_zh": "加蓬",
+          "name": "Gabon",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "GH",
+          "name_zh": "加纳",
+          "name": "Ghana",
+          "currency": "GHS",
+          "currency_zh": "加纳塞地"
+        },
+        {
+          "code": "GM",
+          "name_zh": "冈比亚",
+          "name": "Gambia",
+          "currency": "GMD",
+          "currency_zh": "冈比亚达拉西"
+        },
+        {
+          "code": "GN",
+          "name_zh": "几内亚",
+          "name": "Guinea",
+          "currency": "GNF",
+          "currency_zh": "几内亚法郎"
+        },
+        {
+          "code": "GQ",
+          "name_zh": "赤道几内亚",
+          "name": "Equatorial Guinea",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "GW",
+          "name_zh": "几内亚比绍",
+          "name": "Guinea-Bissau",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "KE",
+          "name_zh": "肯尼亚",
+          "name": "Kenya",
+          "currency": "KES",
+          "currency_zh": "肯尼亚先令"
+        },
+        {
+          "code": "LR",
+          "name_zh": "利比里亚",
+          "name": "Liberia",
+          "currency": "LRD",
+          "currency_zh": "利比里亚元"
+        },
+        {
+          "code": "LS",
+          "name_zh": "莱索托",
+          "name": "Lesotho",
+          "currency": "LSL",
+          "currency_zh": "莱索托洛蒂"
+        },
+        {
+          "code": "ML",
+          "name_zh": "马里",
+          "name": "Mali",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "MZ",
+          "name_zh": "莫桑比克",
+          "name": "Mozambique",
+          "currency": "MZN",
+          "currency_zh": "莫桑比克梅蒂卡尔"
+        },
+        {
+          "code": "NA",
+          "name_zh": "纳米比亚",
+          "name": "Namibia",
+          "currency": "NAD",
+          "currency_zh": "纳米比亚元"
+        },
+        {
+          "code": "NE",
+          "name_zh": "尼日尔",
+          "name": "Niger",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "NG",
+          "name_zh": "尼日利亚",
+          "name": "Nigeria",
+          "currency": "NGN",
+          "currency_zh": "尼日利亚奈拉"
+        },
+        {
+          "code": "RW",
+          "name_zh": "卢旺达",
+          "name": "Rwanda",
+          "currency": "RWF",
+          "currency_zh": "卢旺达法郎"
+        },
+        {
+          "code": "SL",
+          "name_zh": "塞拉利昂",
+          "name": "Sierra Leone",
+          "currency": "SLE",
+          "currency_zh": "塞拉利昂利昂"
+        },
+        {
+          "code": "SN",
+          "name_zh": "塞内加尔",
+          "name": "Senegal",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "SO",
+          "name_zh": "索马里",
+          "name": "Somalia",
+          "currency": "SOS",
+          "currency_zh": "索马里先令"
+        },
+        {
+          "code": "SS",
+          "name_zh": "南苏丹",
+          "name": "South Sudan",
+          "currency": "SSP",
+          "currency_zh": "南苏丹镑"
+        },
+        {
+          "code": "SZ",
+          "name_zh": "斯威士兰",
+          "name": "Eswatini",
+          "currency": "SZL",
+          "currency_zh": "斯威士兰里兰吉尼"
+        },
+        {
+          "code": "TD",
+          "name_zh": "乍得",
+          "name": "Chad",
+          "currency": "XAF",
+          "currency_zh": "中非法郎"
+        },
+        {
+          "code": "TG",
+          "name_zh": "多哥",
+          "name": "Togo",
+          "currency": "XOF",
+          "currency_zh": "西非法郎"
+        },
+        {
+          "code": "TZ",
+          "name_zh": "坦桑尼亚",
+          "name": "Tanzania",
+          "currency": "TZS",
+          "currency_zh": "坦桑尼亚先令"
+        },
+        {
+          "code": "UG",
+          "name_zh": "乌干达",
+          "name": "Uganda",
+          "currency": "UGX",
+          "currency_zh": "乌干达先令"
+        },
+        {
+          "code": "ZA",
+          "name_zh": "南非",
+          "name": "South Africa",
+          "currency": "ZAR",
+          "currency_zh": "南非兰特"
+        },
+        {
+          "code": "ZM",
+          "name_zh": "赞比亚",
+          "name": "Zambia",
+          "currency": "ZMW",
+          "currency_zh": "赞比亚克瓦查"
+        },
+        {
+          "code": "ZW",
+          "name_zh": "津巴布韦",
+          "name": "Zimbabwe",
+          "currency": "ZWG",
+          "currency_zh": "津巴布韦金"
+        }
+      ]
+    },
+    {
+      "code": "EAS",
+      "name_zh": "东亚",
+      "name": "East Asia",
+      "countries": [
+        {
+          "code": "CN",
+          "name_zh": "中国大陆",
+          "name": "Mainland China",
+          "currency": "CNY",
+          "currency_zh": "人民币"
+        },
+        {
+          "code": "HK",
+          "name_zh": "中国香港",
+          "name": "Hong Kong SAR",
+          "currency": "HKD",
+          "currency_zh": "港元"
+        },
+        {
+          "code": "JP",
+          "name_zh": "日本",
+          "name": "Japan",
+          "currency": "JPY",
+          "currency_zh": "日元"
+        },
+        {
+          "code": "KP",
+          "name_zh": "朝鲜",
+          "name": "North Korea",
+          "currency": "KPW",
+          "currency_zh": "朝鲜圆"
+        },
+        {
+          "code": "KR",
+          "name_zh": "韩国",
+          "name": "South Korea",
+          "currency": "KRW",
+          "currency_zh": "韩元"
+        },
+        {
+          "code": "MN",
+          "name_zh": "蒙古",
+          "name": "Mongolia",
+          "currency": "MNT",
+          "currency_zh": "蒙古图格里克"
+        },
+        {
+          "code": "MO",
+          "name_zh": "中国澳门",
+          "name": "Macao SAR",
+          "currency": "MOP",
+          "currency_zh": "澳门元"
+        },
+        {
+          "code": "TW",
+          "name_zh": "中国台湾",
+          "name": "Taiwan, Province of China",
+          "currency": "TWD",
+          "currency_zh": "新台币"
+        },
+        {
+          "code": "BN",
+          "name_zh": "文莱",
+          "name": "Brunei",
+          "currency": "BND",
+          "currency_zh": "文莱元"
+        },
+        {
+          "code": "ID",
+          "name_zh": "印度尼西亚",
+          "name": "Indonesia",
+          "currency": "IDR",
+          "currency_zh": "印度尼西亚盾"
+        },
+        {
+          "code": "KH",
+          "name_zh": "柬埔寨",
+          "name": "Cambodia",
+          "currency": "KHR",
+          "currency_zh": "柬埔寨瑞尔"
+        },
+        {
+          "code": "LA",
+          "name_zh": "老挝",
+          "name": "Laos",
+          "currency": "LAK",
+          "currency_zh": "老挝基普"
+        },
+        {
+          "code": "MM",
+          "name_zh": "缅甸",
+          "name": "Myanmar (Burma)",
+          "currency": "MMK",
+          "currency_zh": "缅甸元"
+        },
+        {
+          "code": "MY",
+          "name_zh": "马来西亚",
+          "name": "Malaysia",
+          "currency": "MYR",
+          "currency_zh": "马来西亚林吉特"
+        },
+        {
+          "code": "PH",
+          "name_zh": "菲律宾",
+          "name": "Philippines",
+          "currency": "PHP",
+          "currency_zh": "菲律宾比索"
+        },
+        {
+          "code": "SG",
+          "name_zh": "新加坡",
+          "name": "Singapore",
+          "currency": "SGD",
+          "currency_zh": "新加坡元"
+        },
+        {
+          "code": "TH",
+          "name_zh": "泰国",
+          "name": "Thailand",
+          "currency": "THB",
+          "currency_zh": "泰铢"
+        },
+        {
+          "code": "TL",
+          "name_zh": "东帝汶",
+          "name": "Timor-Leste",
+          "currency": "USD",
+          "currency_zh": "美元"
+        },
+        {
+          "code": "VN",
+          "name_zh": "越南",
+          "name": "Vietnam",
+          "currency": "VND",
+          "currency_zh": "越南盾"
+        },
+        {
+          "code": "AF",
+          "name_zh": "阿富汗",
+          "name": "Afghanistan",
+          "currency": "AFN",
+          "currency_zh": "阿富汗尼"
+        },
+        {
+          "code": "BD",
+          "name_zh": "孟加拉国",
+          "name": "Bangladesh",
+          "currency": "BDT",
+          "currency_zh": "孟加拉塔卡"
+        },
+        {
+          "code": "BT",
+          "name_zh": "不丹",
+          "name": "Bhutan",
+          "currency": "BTN",
+          "currency_zh": "不丹努尔特鲁姆"
+        },
+        {
+          "code": "IN",
+          "name_zh": "印度",
+          "name": "India",
+          "currency": "INR",
+          "currency_zh": "印度卢比"
+        },
+        {
+          "code": "LK",
+          "name_zh": "斯里兰卡",
+          "name": "Sri Lanka",
+          "currency": "LKR",
+          "currency_zh": "斯里兰卡卢比"
+        },
+        {
+          "code": "MV",
+          "name_zh": "马尔代夫",
+          "name": "Maldives",
+          "currency": "MVR",
+          "currency_zh": "马尔代夫拉菲亚"
+        },
+        {
+          "code": "NP",
+          "name_zh": "尼泊尔",
+          "name": "Nepal",
+          "currency": "NPR",
+          "currency_zh": "尼泊尔卢比"
+        },
+        {
+          "code": "PK",
+          "name_zh": "巴基斯坦",
+          "name": "Pakistan",
+          "currency": "PKR",
+          "currency_zh": "巴基斯坦卢比"
+        }
+      ]
+    },
+    {
+      "code": "WAS",
+      "name_zh": "西亚",
+      "name": "West Asia",
+      "countries": [
+        {
+          "code": "AE",
+          "name_zh": "阿拉伯联合酋长国",
+          "name": "United Arab Emirates",
+          "currency": "AED",
+          "currency_zh": "阿联酋迪拉姆"
+        },
+        {
+          "code": "AM",
+          "name_zh": "亚美尼亚",
+          "name": "Armenia",
+          "currency": "AMD",
+          "currency_zh": "亚美尼亚德拉姆"
+        },
+        {
+          "code": "AZ",
+          "name_zh": "阿塞拜疆",
+          "name": "Azerbaijan",
+          "currency": "AZN",
+          "currency_zh": "阿塞拜疆马纳特"
+        },
+        {
+          "code": "BH",
+          "name_zh": "巴林",
+          "name": "Bahrain",
+          "currency": "BHD",
+          "currency_zh": "巴林第纳尔"
+        },
+        {
+          "code": "CY",
+          "name_zh": "塞浦路斯",
+          "name": "Cyprus",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "GE",
+          "name_zh": "格鲁吉亚",
+          "name": "Georgia",
+          "currency": "GEL",
+          "currency_zh": "格鲁吉亚拉里"
+        },
+        {
+          "code": "IL",
+          "name_zh": "以色列",
+          "name": "Israel",
+          "currency": "ILS",
+          "currency_zh": "以色列新谢克尔"
+        },
+        {
+          "code": "IQ",
+          "name_zh": "伊拉克",
+          "name": "Iraq",
+          "currency": "IQD",
+          "currency_zh": "伊拉克第纳尔"
+        },
+        {
+          "code": "IR",
+          "name_zh": "伊朗",
+          "name": "Iran",
+          "currency": "IRR",
+          "currency_zh": "伊朗里亚尔"
+        },
+        {
+          "code": "JO",
+          "name_zh": "约旦",
+          "name": "Jordan",
+          "currency": "JOD",
+          "currency_zh": "约旦第纳尔"
+        },
+        {
+          "code": "KG",
+          "name_zh": "吉尔吉斯斯坦",
+          "name": "Kyrgyzstan",
+          "currency": "KGS",
+          "currency_zh": "吉尔吉斯斯坦索姆"
+        },
+        {
+          "code": "KW",
+          "name_zh": "科威特",
+          "name": "Kuwait",
+          "currency": "KWD",
+          "currency_zh": "科威特第纳尔"
+        },
+        {
+          "code": "KZ",
+          "name_zh": "哈萨克斯坦",
+          "name": "Kazakhstan",
+          "currency": "KZT",
+          "currency_zh": "哈萨克斯坦坚戈"
+        },
+        {
+          "code": "LB",
+          "name_zh": "黎巴嫩",
+          "name": "Lebanon",
+          "currency": "LBP",
+          "currency_zh": "黎巴嫩镑"
+        },
+        {
+          "code": "OM",
+          "name_zh": "阿曼",
+          "name": "Oman",
+          "currency": "OMR",
+          "currency_zh": "阿曼里亚尔"
+        },
+        {
+          "code": "PS",
+          "name_zh": "巴勒斯坦领土",
+          "name": "Palestinian Territories",
+          "currency": "ILS",
+          "currency_zh": "以色列新谢克尔"
+        },
+        {
+          "code": "QA",
+          "name_zh": "卡塔尔",
+          "name": "Qatar",
+          "currency": "QAR",
+          "currency_zh": "卡塔尔里亚尔"
+        },
+        {
+          "code": "SA",
+          "name_zh": "沙特阿拉伯",
+          "name": "Saudi Arabia",
+          "currency": "SAR",
+          "currency_zh": "沙特里亚尔"
+        },
+        {
+          "code": "SY",
+          "name_zh": "叙利亚",
+          "name": "Syria",
+          "currency": "SYP",
+          "currency_zh": "叙利亚镑"
+        },
+        {
+          "code": "TJ",
+          "name_zh": "塔吉克斯坦",
+          "name": "Tajikistan",
+          "currency": "TJS",
+          "currency_zh": "塔吉克斯坦索莫尼"
+        },
+        {
+          "code": "TM",
+          "name_zh": "土库曼斯坦",
+          "name": "Turkmenistan",
+          "currency": "TMT",
+          "currency_zh": "土库曼斯坦马纳特"
+        },
+        {
+          "code": "TR",
+          "name_zh": "土耳其",
+          "name": "Turkey",
+          "currency": "TRY",
+          "currency_zh": "土耳其里拉"
+        },
+        {
+          "code": "UZ",
+          "name_zh": "乌兹别克斯坦",
+          "name": "Uzbekistan",
+          "currency": "UZS",
+          "currency_zh": "乌兹别克斯坦苏姆"
+        },
+        {
+          "code": "YE",
+          "name_zh": "也门",
+          "name": "Yemen",
+          "currency": "YER",
+          "currency_zh": "也门里亚尔"
+        }
+      ]
     },
     {
       "code": "EU",
-      "name": "\u6b27\u76df"
-    },
-    {
-      "code": "EZ",
-      "name": "\u6b27\u5143\u533a"
-    },
-    {
-      "code": "FI",
-      "name": "\u82ac\u5170"
-    },
-    {
-      "code": "FJ",
-      "name": "\u6590\u6d4e"
-    },
-    {
-      "code": "FK",
-      "name": "\u798f\u514b\u5170\u7fa4\u5c9b"
-    },
-    {
-      "code": "FM",
-      "name": "\u5bc6\u514b\u7f57\u5c3c\u897f\u4e9a"
-    },
-    {
-      "code": "FO",
-      "name": "\u6cd5\u7f57\u7fa4\u5c9b"
-    },
-    {
-      "code": "FR",
-      "name": "\u6cd5\u56fd"
-    },
-    {
-      "code": "GA",
-      "name": "\u52a0\u84ec"
-    },
-    {
-      "code": "GB",
-      "name": "\u82f1\u56fd"
-    },
-    {
-      "code": "GD",
-      "name": "\u683c\u6797\u7eb3\u8fbe"
-    },
-    {
-      "code": "GE",
-      "name": "\u683c\u9c81\u5409\u4e9a"
-    },
-    {
-      "code": "GF",
-      "name": "\u6cd5\u5c5e\u572d\u4e9a\u90a3"
-    },
-    {
-      "code": "GG",
-      "name": "\u6839\u897f\u5c9b"
-    },
-    {
-      "code": "GH",
-      "name": "\u52a0\u7eb3"
-    },
-    {
-      "code": "GI",
-      "name": "\u76f4\u5e03\u7f57\u9640"
-    },
-    {
-      "code": "GL",
-      "name": "\u683c\u9675\u5170"
-    },
-    {
-      "code": "GM",
-      "name": "\u5188\u6bd4\u4e9a"
-    },
-    {
-      "code": "GN",
-      "name": "\u51e0\u5185\u4e9a"
-    },
-    {
-      "code": "GP",
-      "name": "\u74dc\u5fb7\u7f57\u666e"
-    },
-    {
-      "code": "GQ",
-      "name": "\u8d64\u9053\u51e0\u5185\u4e9a"
-    },
-    {
-      "code": "GR",
-      "name": "\u5e0c\u814a"
-    },
-    {
-      "code": "GS",
-      "name": "\u5357\u4e54\u6cbb\u4e9a\u548c\u5357\u6851\u5a01\u5947\u7fa4\u5c9b"
-    },
-    {
-      "code": "GT",
-      "name": "\u5371\u5730\u9a6c\u62c9"
-    },
-    {
-      "code": "GU",
-      "name": "\u5173\u5c9b"
-    },
-    {
-      "code": "GW",
-      "name": "\u51e0\u5185\u4e9a\u6bd4\u7ecd"
-    },
-    {
-      "code": "GY",
-      "name": "\u572d\u4e9a\u90a3"
-    },
-    {
-      "code": "HK",
-      "name": "\u4e2d\u56fd\u9999\u6e2f"
-    },
-    {
-      "code": "HM",
-      "name": "\u8d6b\u5fb7\u5c9b\u548c\u9ea6\u514b\u5510\u7eb3\u7fa4\u5c9b"
-    },
-    {
-      "code": "HN",
-      "name": "\u6d2a\u90fd\u62c9\u65af"
-    },
-    {
-      "code": "HR",
-      "name": "\u514b\u7f57\u5730\u4e9a"
-    },
-    {
-      "code": "HT",
-      "name": "\u6d77\u5730"
-    },
-    {
-      "code": "HU",
-      "name": "\u5308\u7259\u5229"
-    },
-    {
-      "code": "IC",
-      "name": "\u52a0\u7eb3\u5229\u7fa4\u5c9b"
-    },
-    {
-      "code": "ID",
-      "name": "\u5370\u5ea6\u5c3c\u897f\u4e9a"
-    },
-    {
-      "code": "IE",
-      "name": "\u7231\u5c14\u5170"
-    },
-    {
-      "code": "IL",
-      "name": "\u4ee5\u8272\u5217"
-    },
-    {
-      "code": "IM",
-      "name": "\u9a6c\u6069\u5c9b"
-    },
-    {
-      "code": "IN",
-      "name": "\u5370\u5ea6"
-    },
-    {
-      "code": "IO",
-      "name": "\u82f1\u5c5e\u5370\u5ea6\u6d0b\u9886\u5730"
-    },
-    {
-      "code": "IQ",
-      "name": "\u4f0a\u62c9\u514b"
-    },
-    {
-      "code": "IR",
-      "name": "\u4f0a\u6717"
-    },
-    {
-      "code": "IS",
-      "name": "\u51b0\u5c9b"
-    },
-    {
-      "code": "IT",
-      "name": "\u610f\u5927\u5229"
-    },
-    {
-      "code": "JE",
-      "name": "\u6cfd\u897f\u5c9b"
-    },
-    {
-      "code": "JM",
-      "name": "\u7259\u4e70\u52a0"
-    },
-    {
-      "code": "JO",
-      "name": "\u7ea6\u65e6"
-    },
-    {
-      "code": "JP",
-      "name": "\u65e5\u672c"
-    },
-    {
-      "code": "KE",
-      "name": "\u80af\u5c3c\u4e9a"
-    },
-    {
-      "code": "KG",
-      "name": "\u5409\u5c14\u5409\u65af\u65af\u5766"
-    },
-    {
-      "code": "KH",
-      "name": "\u67ec\u57d4\u5be8"
-    },
-    {
-      "code": "KI",
-      "name": "\u57fa\u91cc\u5df4\u65af"
-    },
-    {
-      "code": "KM",
-      "name": "\u79d1\u6469\u7f57"
-    },
-    {
-      "code": "KN",
-      "name": "\u5723\u57fa\u8328\u548c\u5c3c\u7ef4\u65af"
-    },
-    {
-      "code": "KP",
-      "name": "\u671d\u9c9c"
-    },
-    {
-      "code": "KR",
-      "name": "\u97e9\u56fd"
-    },
-    {
-      "code": "KW",
-      "name": "\u79d1\u5a01\u7279"
-    },
-    {
-      "code": "KY",
-      "name": "\u5f00\u66fc\u7fa4\u5c9b"
-    },
-    {
-      "code": "KZ",
-      "name": "\u54c8\u8428\u514b\u65af\u5766"
-    },
-    {
-      "code": "LA",
-      "name": "\u8001\u631d"
-    },
-    {
-      "code": "LB",
-      "name": "\u9ece\u5df4\u5ae9"
-    },
-    {
-      "code": "LC",
-      "name": "\u5723\u5362\u897f\u4e9a"
-    },
-    {
-      "code": "LI",
-      "name": "\u5217\u652f\u6566\u58eb\u767b"
-    },
-    {
-      "code": "LK",
-      "name": "\u65af\u91cc\u5170\u5361"
-    },
-    {
-      "code": "LR",
-      "name": "\u5229\u6bd4\u91cc\u4e9a"
-    },
-    {
-      "code": "LS",
-      "name": "\u83b1\u7d22\u6258"
-    },
-    {
-      "code": "LT",
-      "name": "\u7acb\u9676\u5b9b"
-    },
-    {
-      "code": "LU",
-      "name": "\u5362\u68ee\u5821"
-    },
-    {
-      "code": "LV",
-      "name": "\u62c9\u8131\u7ef4\u4e9a"
-    },
-    {
-      "code": "LY",
-      "name": "\u5229\u6bd4\u4e9a"
-    },
-    {
-      "code": "MA",
-      "name": "\u6469\u6d1b\u54e5"
-    },
-    {
-      "code": "MC",
-      "name": "\u6469\u7eb3\u54e5"
-    },
-    {
-      "code": "MD",
-      "name": "\u6469\u5c14\u591a\u74e6"
-    },
-    {
-      "code": "ME",
-      "name": "\u9ed1\u5c71"
-    },
-    {
-      "code": "MF",
-      "name": "\u6cd5\u5c5e\u5723\u9a6c\u4e01"
-    },
-    {
-      "code": "MG",
-      "name": "\u9a6c\u8fbe\u52a0\u65af\u52a0"
-    },
-    {
-      "code": "MH",
-      "name": "\u9a6c\u7ecd\u5c14\u7fa4\u5c9b"
-    },
-    {
-      "code": "MK",
-      "name": "\u5317\u9a6c\u5176\u987f"
-    },
-    {
-      "code": "ML",
-      "name": "\u9a6c\u91cc"
-    },
-    {
-      "code": "MM",
-      "name": "\u7f05\u7538"
-    },
-    {
-      "code": "MN",
-      "name": "\u8499\u53e4"
-    },
-    {
-      "code": "MO",
-      "name": "\u4e2d\u56fd\u6fb3\u95e8"
-    },
-    {
-      "code": "MP",
-      "name": "\u5317\u9a6c\u91cc\u4e9a\u7eb3\u7fa4\u5c9b"
-    },
-    {
-      "code": "MQ",
-      "name": "\u9a6c\u63d0\u5c3c\u514b"
-    },
-    {
-      "code": "MR",
-      "name": "\u6bdb\u91cc\u5854\u5c3c\u4e9a"
-    },
-    {
-      "code": "MS",
-      "name": "\u8499\u7279\u585e\u62c9\u7279"
-    },
-    {
-      "code": "MT",
-      "name": "\u9a6c\u8033\u4ed6"
-    },
-    {
-      "code": "MU",
-      "name": "\u6bdb\u91cc\u6c42\u65af"
-    },
-    {
-      "code": "MV",
-      "name": "\u9a6c\u5c14\u4ee3\u592b"
-    },
-    {
-      "code": "MW",
-      "name": "\u9a6c\u62c9\u7ef4"
-    },
-    {
-      "code": "MX",
-      "name": "\u58a8\u897f\u54e5"
-    },
-    {
-      "code": "MY",
-      "name": "\u9a6c\u6765\u897f\u4e9a"
-    },
-    {
-      "code": "MZ",
-      "name": "\u83ab\u6851\u6bd4\u514b"
+      "name_zh": "欧洲",
+      "name": "Europe",
+      "countries": [
+        {
+          "code": "AD",
+          "name_zh": "安道尔",
+          "name": "Andorra",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "AL",
+          "name_zh": "阿尔巴尼亚",
+          "name": "Albania",
+          "currency": "ALL",
+          "currency_zh": "阿尔巴尼亚列克"
+        },
+        {
+          "code": "AT",
+          "name_zh": "奥地利",
+          "name": "Austria",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "BA",
+          "name_zh": "波斯尼亚和黑塞哥维那",
+          "name": "Bosnia \u0026 Herzegovina",
+          "currency": "BAM",
+          "currency_zh": "波斯尼亚可兑换马克"
+        },
+        {
+          "code": "BE",
+          "name_zh": "比利时",
+          "name": "Belgium",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "BG",
+          "name_zh": "保加利亚",
+          "name": "Bulgaria",
+          "currency": "BGN",
+          "currency_zh": "保加利亚列弗"
+        },
+        {
+          "code": "BY",
+          "name_zh": "白俄罗斯",
+          "name": "Belarus",
+          "currency": "BYN",
+          "currency_zh": "白俄罗斯卢布"
+        },
+        {
+          "code": "CH",
+          "name_zh": "瑞士",
+          "name": "Switzerland",
+          "currency": "CHF",
+          "currency_zh": "瑞士法郎"
+        },
+        {
+          "code": "CZ",
+          "name_zh": "捷克",
+          "name": "Czechia",
+          "currency": "CZK",
+          "currency_zh": "捷克克朗"
+        },
+        {
+          "code": "DE",
+          "name_zh": "德国",
+          "name": "Germany",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "DK",
+          "name_zh": "丹麦",
+          "name": "Denmark",
+          "currency": "DKK",
+          "currency_zh": "丹麦克朗"
+        },
+        {
+          "code": "EE",
+          "name_zh": "爱沙尼亚",
+          "name": "Estonia",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "ES",
+          "name_zh": "西班牙",
+          "name": "Spain",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "FI",
+          "name_zh": "芬兰",
+          "name": "Finland",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "FR",
+          "name_zh": "法国",
+          "name": "France",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "GB",
+          "name_zh": "英国",
+          "name": "United Kingdom",
+          "currency": "GBP",
+          "currency_zh": "英镑"
+        },
+        {
+          "code": "GR",
+          "name_zh": "希腊",
+          "name": "Greece",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "HR",
+          "name_zh": "克罗地亚",
+          "name": "Croatia",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "HU",
+          "name_zh": "匈牙利",
+          "name": "Hungary",
+          "currency": "HUF",
+          "currency_zh": "匈牙利福林"
+        },
+        {
+          "code": "IE",
+          "name_zh": "爱尔兰",
+          "name": "Ireland",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "IS",
+          "name_zh": "冰岛",
+          "name": "Iceland",
+          "currency": "ISK",
+          "currency_zh": "冰岛克朗"
+        },
+        {
+          "code": "IT",
+          "name_zh": "意大利",
+          "name": "Italy",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "LI",
+          "name_zh": "列支敦士登",
+          "name": "Liechtenstein",
+          "currency": "CHF",
+          "currency_zh": "瑞士法郎"
+        },
+        {
+          "code": "LT",
+          "name_zh": "立陶宛",
+          "name": "Lithuania",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "LU",
+          "name_zh": "卢森堡",
+          "name": "Luxembourg",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "LV",
+          "name_zh": "拉脱维亚",
+          "name": "Latvia",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "MC",
+          "name_zh": "摩纳哥",
+          "name": "Monaco",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "MD",
+          "name_zh": "摩尔多瓦",
+          "name": "Moldova",
+          "currency": "MDL",
+          "currency_zh": "摩尔多瓦列伊"
+        },
+        {
+          "code": "ME",
+          "name_zh": "黑山",
+          "name": "Montenegro",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "MK",
+          "name_zh": "北马其顿",
+          "name": "North Macedonia",
+          "currency": "MKD",
+          "currency_zh": "北马其顿第纳尔"
+        },
+        {
+          "code": "MT",
+          "name_zh": "马耳他",
+          "name": "Malta",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "NL",
+          "name_zh": "荷兰",
+          "name": "Netherlands",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "NO",
+          "name_zh": "挪威",
+          "name": "Norway",
+          "currency": "NOK",
+          "currency_zh": "挪威克朗"
+        },
+        {
+          "code": "PL",
+          "name_zh": "波兰",
+          "name": "Poland",
+          "currency": "PLN",
+          "currency_zh": "波兰兹罗提"
+        },
+        {
+          "code": "PT",
+          "name_zh": "葡萄牙",
+          "name": "Portugal",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "RO",
+          "name_zh": "罗马尼亚",
+          "name": "Romania",
+          "currency": "RON",
+          "currency_zh": "罗马尼亚列伊"
+        },
+        {
+          "code": "RS",
+          "name_zh": "塞尔维亚",
+          "name": "Serbia",
+          "currency": "RSD",
+          "currency_zh": "塞尔维亚第纳尔"
+        },
+        {
+          "code": "RU",
+          "name_zh": "俄罗斯",
+          "name": "Russia",
+          "currency": "RUB",
+          "currency_zh": "俄罗斯卢布"
+        },
+        {
+          "code": "SE",
+          "name_zh": "瑞典",
+          "name": "Sweden",
+          "currency": "SEK",
+          "currency_zh": "瑞典克朗"
+        },
+        {
+          "code": "SI",
+          "name_zh": "斯洛文尼亚",
+          "name": "Slovenia",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "SK",
+          "name_zh": "斯洛伐克",
+          "name": "Slovakia",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "SM",
+          "name_zh": "圣马力诺",
+          "name": "San Marino",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "UA",
+          "name_zh": "乌克兰",
+          "name": "Ukraine",
+          "currency": "UAH",
+          "currency_zh": "乌克兰格里夫纳"
+        },
+        {
+          "code": "VA",
+          "name_zh": "梵蒂冈",
+          "name": "Vatican City",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        },
+        {
+          "code": "XK",
+          "name_zh": "科索沃",
+          "name": "Kosovo",
+          "currency": "EUR",
+          "currency_zh": "欧元"
+        }
+      ]
     },
     {
       "code": "NA",
-      "name": "\u7eb3\u7c73\u6bd4\u4e9a"
-    },
-    {
-      "code": "NC",
-      "name": "\u65b0\u5580\u91cc\u591a\u5c3c\u4e9a"
-    },
-    {
-      "code": "NE",
-      "name": "\u5c3c\u65e5\u5c14"
-    },
-    {
-      "code": "NF",
-      "name": "\u8bfa\u798f\u514b\u5c9b"
-    },
-    {
-      "code": "NG",
-      "name": "\u5c3c\u65e5\u5229\u4e9a"
-    },
-    {
-      "code": "NI",
-      "name": "\u5c3c\u52a0\u62c9\u74dc"
-    },
-    {
-      "code": "NL",
-      "name": "\u8377\u5170"
-    },
-    {
-      "code": "NO",
-      "name": "\u632a\u5a01"
-    },
-    {
-      "code": "NP",
-      "name": "\u5c3c\u6cca\u5c14"
-    },
-    {
-      "code": "NR",
-      "name": "\u7459\u9c81"
-    },
-    {
-      "code": "NU",
-      "name": "\u7ebd\u57c3"
-    },
-    {
-      "code": "NZ",
-      "name": "\u65b0\u897f\u5170"
-    },
-    {
-      "code": "OM",
-      "name": "\u963f\u66fc"
-    },
-    {
-      "code": "PA",
-      "name": "\u5df4\u62ff\u9a6c"
-    },
-    {
-      "code": "PE",
-      "name": "\u79d8\u9c81"
-    },
-    {
-      "code": "PF",
-      "name": "\u6cd5\u5c5e\u6ce2\u5229\u5c3c\u897f\u4e9a"
-    },
-    {
-      "code": "PG",
-      "name": "\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a"
-    },
-    {
-      "code": "PH",
-      "name": "\u83f2\u5f8b\u5bbe"
-    },
-    {
-      "code": "PK",
-      "name": "\u5df4\u57fa\u65af\u5766"
-    },
-    {
-      "code": "PL",
-      "name": "\u6ce2\u5170"
-    },
-    {
-      "code": "PM",
-      "name": "\u5723\u76ae\u57c3\u5c14\u548c\u5bc6\u514b\u9686\u7fa4\u5c9b"
-    },
-    {
-      "code": "PN",
-      "name": "\u76ae\u7279\u51ef\u6069\u7fa4\u5c9b"
-    },
-    {
-      "code": "PR",
-      "name": "\u6ce2\u591a\u9ece\u5404"
-    },
-    {
-      "code": "PS",
-      "name": "\u5df4\u52d2\u65af\u5766\u9886\u571f"
-    },
-    {
-      "code": "PT",
-      "name": "\u8461\u8404\u7259"
-    },
-    {
-      "code": "PW",
-      "name": "\u5e15\u52b3"
-    },
-    {
-      "code": "PY",
-      "name": "\u5df4\u62c9\u572d"
-    },
-    {
-      "code": "QA",
-      "name": "\u5361\u5854\u5c14"
-    },
-    {
-      "code": "QO",
-      "name": "\u5927\u6d0b\u6d32\u8fb9\u8fdc\u7fa4\u5c9b"
-    },
-    {
-      "code": "RE",
-      "name": "\u7559\u5c3c\u6c6a"
-    },
-    {
-      "code": "RO",
-      "name": "\u7f57\u9a6c\u5c3c\u4e9a"
-    },
-    {
-      "code": "RS",
-      "name": "\u585e\u5c14\u7ef4\u4e9a"
-    },
-    {
-      "code": "RU",
-      "name": "\u4fc4\u7f57\u65af"
-    },
-    {
-      "code": "RW",
-      "name": "\u5362\u65fa\u8fbe"
+      "name_zh": "北美洲",
+      "name": "North America",
+      "countries": [
+        {
+          "code": "BZ",
+          "name_zh": "伯利兹",
+          "name": "Belize",
+          "currency": "BZD",
+          "currency_zh": "伯利兹元"
+        },
+        {
+          "code": "CA",
+          "name_zh": "加拿大",
+          "name": "Canada",
+          "currency": "CAD",
+          "currency_zh": "加拿大元"
+        },
+        {
+          "code": "CR",
+          "name_zh": "哥斯达黎加",
+          "name": "Costa Rica",
+          "currency": "CRC",
+          "currency_zh": "哥斯达黎加科朗"
+        },
+        {
+          "code": "CU",
+          "name_zh": "古巴",
+          "name": "Cuba",
+          "currency": "CUP",
+          "currency_zh": "古巴比索"
+        },
+        {
+          "code": "DO",
+          "name_zh": "多米尼加共和国",
+          "name": "Dominican Republic",
+          "currency": "DOP",
+          "currency_zh": "多米尼加比索"
+        },
+        {
+          "code": "GT",
+          "name_zh": "危地马拉",
+          "name": "Guatemala",
+          "currency": "GTQ",
+          "currency_zh": "危地马拉格查尔"
+        },
+        {
+          "code": "HN",
+          "name_zh": "洪都拉斯",
+          "name": "Honduras",
+          "currency": "HNL",
+          "currency_zh": "洪都拉斯伦皮拉"
+        },
+        {
+          "code": "JM",
+          "name_zh": "牙买加",
+          "name": "Jamaica",
+          "currency": "JMD",
+          "currency_zh": "牙买加元"
+        },
+        {
+          "code": "MX",
+          "name_zh": "墨西哥",
+          "name": "Mexico",
+          "currency": "MXN",
+          "currency_zh": "墨西哥比索"
+        },
+        {
+          "code": "NI",
+          "name_zh": "尼加拉瓜",
+          "name": "Nicaragua",
+          "currency": "NIO",
+          "currency_zh": "尼加拉瓜科多巴"
+        },
+        {
+          "code": "PA",
+          "name_zh": "巴拿马",
+          "name": "Panama",
+          "currency": "PAB",
+          "currency_zh": "巴拿马巴波亚"
+        },
+        {
+          "code": "SV",
+          "name_zh": "萨尔瓦多",
+          "name": "El Salvador",
+          "currency": "USD",
+          "currency_zh": "美元"
+        },
+        {
+          "code": "US",
+          "name_zh": "美国",
+          "name": "United States",
+          "currency": "USD",
+          "currency_zh": "美元"
+        }
+      ]
     },
     {
       "code": "SA",
-      "name": "\u6c99\u7279\u963f\u62c9\u4f2f"
+      "name_zh": "南美洲",
+      "name": "South America",
+      "countries": [
+        {
+          "code": "AR",
+          "name_zh": "阿根廷",
+          "name": "Argentina",
+          "currency": "ARS",
+          "currency_zh": "阿根廷比索"
+        },
+        {
+          "code": "BO",
+          "name_zh": "玻利维亚",
+          "name": "Bolivia",
+          "currency": "BOB",
+          "currency_zh": "玻利维亚诺"
+        },
+        {
+          "code": "BR",
+          "name_zh": "巴西",
+          "name": "Brazil",
+          "currency": "BRL",
+          "currency_zh": "巴西雷亚尔"
+        },
+        {
+          "code": "CL",
+          "name_zh": "智利",
+          "name": "Chile",
+          "currency": "CLP",
+          "currency_zh": "智利比索"
+        },
+        {
+          "code": "CO",
+          "name_zh": "哥伦比亚",
+          "name": "Colombia",
+          "currency": "COP",
+          "currency_zh": "哥伦比亚比索"
+        },
+        {
+          "code": "EC",
+          "name_zh": "厄瓜多尔",
+          "name": "Ecuador",
+          "currency": "USD",
+          "currency_zh": "美元"
+        },
+        {
+          "code": "GY",
+          "name_zh": "圭亚那",
+          "name": "Guyana",
+          "currency": "GYD",
+          "currency_zh": "圭亚那元"
+        },
+        {
+          "code": "PE",
+          "name_zh": "秘鲁",
+          "name": "Peru",
+          "currency": "PEN",
+          "currency_zh": "秘鲁索尔"
+        },
+        {
+          "code": "PY",
+          "name_zh": "巴拉圭",
+          "name": "Paraguay",
+          "currency": "PYG",
+          "currency_zh": "巴拉圭瓜拉尼"
+        },
+        {
+          "code": "SR",
+          "name_zh": "苏里南",
+          "name": "Suriname",
+          "currency": "SRD",
+          "currency_zh": "苏里南元"
+        },
+        {
+          "code": "UY",
+          "name_zh": "乌拉圭",
+          "name": "Uruguay",
+          "currency": "UYU",
+          "currency_zh": "乌拉圭比索"
+        },
+        {
+          "code": "VE",
+          "name_zh": "委内瑞拉",
+          "name": "Venezuela",
+          "currency": "VES",
+          "currency_zh": "委内瑞拉玻利瓦尔"
+        }
+      ]
     },
     {
-      "code": "SB",
-      "name": "\u6240\u7f57\u95e8\u7fa4\u5c9b"
-    },
-    {
-      "code": "SC",
-      "name": "\u585e\u820c\u5c14"
-    },
-    {
-      "code": "SD",
-      "name": "\u82cf\u4e39"
-    },
-    {
-      "code": "SE",
-      "name": "\u745e\u5178"
-    },
-    {
-      "code": "SG",
-      "name": "\u65b0\u52a0\u5761"
-    },
-    {
-      "code": "SH",
-      "name": "\u5723\u8d6b\u52d2\u62ff"
-    },
-    {
-      "code": "SI",
-      "name": "\u65af\u6d1b\u6587\u5c3c\u4e9a"
-    },
-    {
-      "code": "SJ",
-      "name": "\u65af\u74e6\u5c14\u5df4\u548c\u626c\u9a6c\u5ef6"
-    },
-    {
-      "code": "SK",
-      "name": "\u65af\u6d1b\u4f10\u514b"
-    },
-    {
-      "code": "SL",
-      "name": "\u585e\u62c9\u5229\u6602"
-    },
-    {
-      "code": "SM",
-      "name": "\u5723\u9a6c\u529b\u8bfa"
-    },
-    {
-      "code": "SN",
-      "name": "\u585e\u5185\u52a0\u5c14"
-    },
-    {
-      "code": "SO",
-      "name": "\u7d22\u9a6c\u91cc"
-    },
-    {
-      "code": "SR",
-      "name": "\u82cf\u91cc\u5357"
-    },
-    {
-      "code": "SS",
-      "name": "\u5357\u82cf\u4e39"
-    },
-    {
-      "code": "ST",
-      "name": "\u5723\u591a\u7f8e\u548c\u666e\u6797\u897f\u6bd4"
-    },
-    {
-      "code": "SV",
-      "name": "\u8428\u5c14\u74e6\u591a"
-    },
-    {
-      "code": "SX",
-      "name": "\u8377\u5c5e\u5723\u9a6c\u4e01"
-    },
-    {
-      "code": "SY",
-      "name": "\u53d9\u5229\u4e9a"
-    },
-    {
-      "code": "SZ",
-      "name": "\u65af\u5a01\u58eb\u5170"
-    },
-    {
-      "code": "TA",
-      "name": "\u7279\u91cc\u65af\u5766-\u8fbe\u5e93\u5c3c\u4e9a\u7fa4\u5c9b"
-    },
-    {
-      "code": "TC",
-      "name": "\u7279\u514b\u65af\u548c\u51ef\u79d1\u65af\u7fa4\u5c9b"
-    },
-    {
-      "code": "TD",
-      "name": "\u4e4d\u5f97"
-    },
-    {
-      "code": "TF",
-      "name": "\u6cd5\u5c5e\u5357\u90e8\u9886\u5730"
-    },
-    {
-      "code": "TG",
-      "name": "\u591a\u54e5"
-    },
-    {
-      "code": "TH",
-      "name": "\u6cf0\u56fd"
-    },
-    {
-      "code": "TJ",
-      "name": "\u5854\u5409\u514b\u65af\u5766"
-    },
-    {
-      "code": "TK",
-      "name": "\u6258\u514b\u52b3"
-    },
-    {
-      "code": "TL",
-      "name": "\u4e1c\u5e1d\u6c76"
-    },
-    {
-      "code": "TM",
-      "name": "\u571f\u5e93\u66fc\u65af\u5766"
-    },
-    {
-      "code": "TN",
-      "name": "\u7a81\u5c3c\u65af"
-    },
-    {
-      "code": "TO",
-      "name": "\u6c64\u52a0"
-    },
-    {
-      "code": "TR",
-      "name": "\u571f\u8033\u5176"
-    },
-    {
-      "code": "TT",
-      "name": "\u7279\u7acb\u5c3c\u8fbe\u548c\u591a\u5df4\u54e5"
-    },
-    {
-      "code": "TV",
-      "name": "\u56fe\u74e6\u5362"
-    },
-    {
-      "code": "TW",
-      "name": "\u4e2d\u56fd\u53f0\u6e7e"
-    },
-    {
-      "code": "TZ",
-      "name": "\u5766\u6851\u5c3c\u4e9a"
-    },
-    {
-      "code": "UA",
-      "name": "\u4e4c\u514b\u5170"
-    },
-    {
-      "code": "UG",
-      "name": "\u4e4c\u5e72\u8fbe"
-    },
-    {
-      "code": "UM",
-      "name": "\u7f8e\u56fd\u672c\u571f\u5916\u5c0f\u5c9b\u5c7f"
-    },
-    {
-      "code": "UN",
-      "name": "\u8054\u5408\u56fd"
-    },
-    {
-      "code": "US",
-      "name": "\u7f8e\u56fd"
-    },
-    {
-      "code": "UY",
-      "name": "\u4e4c\u62c9\u572d"
-    },
-    {
-      "code": "UZ",
-      "name": "\u4e4c\u5179\u522b\u514b\u65af\u5766"
-    },
-    {
-      "code": "VA",
-      "name": "\u68b5\u8482\u5188"
-    },
-    {
-      "code": "VC",
-      "name": "\u5723\u6587\u68ee\u7279\u548c\u683c\u6797\u7eb3\u4e01\u65af"
-    },
-    {
-      "code": "VE",
-      "name": "\u59d4\u5185\u745e\u62c9"
-    },
-    {
-      "code": "VG",
-      "name": "\u82f1\u5c5e\u7ef4\u5c14\u4eac\u7fa4\u5c9b"
-    },
-    {
-      "code": "VI",
-      "name": "\u7f8e\u5c5e\u7ef4\u5c14\u4eac\u7fa4\u5c9b"
-    },
-    {
-      "code": "VN",
-      "name": "\u8d8a\u5357"
-    },
-    {
-      "code": "VU",
-      "name": "\u74e6\u52aa\u963f\u56fe"
-    },
-    {
-      "code": "WF",
-      "name": "\u74e6\u5229\u65af\u548c\u5bcc\u56fe\u7eb3"
-    },
-    {
-      "code": "WS",
-      "name": "\u8428\u6469\u4e9a"
-    },
-    {
-      "code": "XA",
-      "name": "\u4f2a\u5730\u533a"
-    },
-    {
-      "code": "XB",
-      "name": "\u4f2a\u53cc\u5411\u8bed\u8a00\u5730\u533a"
-    },
-    {
-      "code": "XK",
-      "name": "\u79d1\u7d22\u6c83"
-    },
-    {
-      "code": "YE",
-      "name": "\u4e5f\u95e8"
-    },
-    {
-      "code": "YT",
-      "name": "\u9a6c\u7ea6\u7279"
-    },
-    {
-      "code": "ZA",
-      "name": "\u5357\u975e"
-    },
-    {
-      "code": "ZM",
-      "name": "\u8d5e\u6bd4\u4e9a"
-    },
-    {
-      "code": "ZW",
-      "name": "\u6d25\u5df4\u5e03\u97e6"
-    },
-    {
-      "code": "ZZ",
-      "name": "\u672a\u77e5\u5730\u533a"
+      "code": "OC",
+      "name_zh": "大洋洲",
+      "name": "Oceania",
+      "countries": [
+        {
+          "code": "AU",
+          "name_zh": "澳大利亚",
+          "name": "Australia",
+          "currency": "AUD",
+          "currency_zh": "澳大利亚元"
+        },
+        {
+          "code": "FJ",
+          "name_zh": "斐济",
+          "name": "Fiji",
+          "currency": "FJD",
+          "currency_zh": "斐济元"
+        },
+        {
+          "code": "NZ",
+          "name_zh": "新西兰",
+          "name": "New Zealand",
+          "currency": "NZD",
+          "currency_zh": "新西兰元"
+        },
+        {
+          "code": "PG",
+          "name_zh": "巴布亚新几内亚",
+          "name": "Papua New Guinea",
+          "currency": "PGK",
+          "currency_zh": "巴布亚新几内亚基那"
+        }
+      ]
     }
   ]
 }
-

@@ -85,7 +85,7 @@ WATCH_FILE_SUFFIXES = {
 
 
 def read_json(path: Path) -> object:
-    with path.open("r", encoding="utf-8") as handle:
+    with path.open("r", encoding="utf-8-sig") as handle:
         return json.load(handle)
 
 

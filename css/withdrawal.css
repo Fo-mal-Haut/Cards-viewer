@@ -4,11 +4,28 @@
 
 .withdrawal-filter-row {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-bottom: 20px;
 }
 
 .withdrawal-filter-row .select-wrap {
   flex: 0 1 280px;
+}
+
+.withdrawal-currency-picker,
+.withdrawal-amount-picker {
+  flex-basis: 180px;
+}
+
+.withdrawal-amount-picker input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
 }
 
 .withdrawal-region-picker {
@@ -31,7 +48,7 @@
   left: 0;
   z-index: 30;
   display: grid;
-  width: min(280px, calc(100vw - 24px));
+  width: min(520px, calc(100vw - 24px));
   max-height: 320px;
   padding: 6px;
   overflow-y: auto;
@@ -39,6 +56,43 @@
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow);
+}
+
+.withdrawal-region-options {
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 6px;
+}
+
+.withdrawal-continent-options,
+.withdrawal-country-options {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+  max-height: 308px;
+  overflow-y: auto;
+}
+
+.withdrawal-continent-options {
+  padding-right: 6px;
+  border-right: 1px solid var(--line);
+}
+
+.withdrawal-continent-option {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.withdrawal-continent-option:hover,
+.withdrawal-continent-option:focus-visible,
+.withdrawal-continent-option.is-active {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-strong);
+  outline: none;
 }
 
 .withdrawal-region-options[hidden] {
@@ -169,11 +223,6 @@
   object-fit: contain;
 }
 
-.withdrawal-ftf-cell {
-  min-width: 90px;
-  white-space: nowrap;
-}
-
 .withdrawal-fee-cell {
   min-width: 190px;
   white-space: pre-line;
@@ -192,5 +241,10 @@
 
   .withdrawal-table {
     min-width: 1040px;
+  }
+
+  .withdrawal-region-options {
+    width: calc(100vw - 24px);
+    grid-template-columns: 110px minmax(0, 1fr);
   }
 }
