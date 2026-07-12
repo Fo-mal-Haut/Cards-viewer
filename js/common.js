@@ -292,15 +292,21 @@
     if (Array.isArray(preloaded?.manifest)) {
       return preloaded.manifest.slice();
     }
+    if (preloaded?.manifestCategories && typeof preloaded.manifestCategories === "object") {
+      return Object.values(preloaded.manifestCategories).flat();
+    }
 
     const manifest = await fetchJsonSafe("assets/manifest.json", {
       warn: options.warn,
     });
+    if (typeof manifest === "object" && manifest !== null && !Array.isArray(manifest)) {
+      return Object.values(manifest).flat();
+    }
     if (Array.isArray(manifest)) {
       return manifest.slice();
     }
     if (manifest && options.warn) {
-      console.warn("assets/manifest.json must be an array");
+      console.warn("assets/manifest.json has an unexpected format");
     }
     return [];
   }

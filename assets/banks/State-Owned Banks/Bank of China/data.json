@@ -24,19 +24,6 @@
       "alt_image": "长城借记卡.png"
     },
     {
-      "name": "万事达世界借记卡",
-      "type": "Debit",
-      "organization": "Mastercard",
-      "tier": "World",
-      "bin": "533228",
-      "currency": ["USD"],
-      "desc": "",
-      "benefit": "",
-      "ext": "png",
-      "status": "active",
-      "acquired": "2026-05"
-    },
-    {
       "name": "长城环球通白金信用卡",
       "type": "Credit",
       "organization": "Mastercard",

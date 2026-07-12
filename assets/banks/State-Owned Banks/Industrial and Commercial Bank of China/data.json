@@ -23,19 +23,6 @@
       "acquired": "2026-05-24",
       "branch": "广东省分行广州分行广州五山支行",
       "alt_image": "工银灵通卡.png"
-    },
-    {
-      "name": "新锐主题借记卡",
-      "type": "Debit",
-      "organization": "UnionPay",
-      "tier": "Standard",
-      "bin": "622203",
-      "currency": ["CNY"],
-      "desc": "",
-      "benefit": "",
-      "ext": "png",
-      "status": "inactive",
-      "acquired": "2026-07-07"
     }
   ]
 }

@@ -166,9 +166,9 @@ def copy_static_files(output_dir: Path) -> None:
 
 
 def build_site_data() -> dict[str, object]:
-    manifest = read_json(ASSETS_DIR / "manifest.json")
-    if not isinstance(manifest, list):
-        raise ValueError("assets/manifest.json must be an array")
+    manifest_raw = read_json(ASSETS_DIR / "manifest.json")
+    if not isinstance(manifest_raw, dict):
+        raise ValueError("assets/manifest.json must be a dict mapping category names to bank name arrays")
 
     # Build bank-to-category mapping by scanning category directories
     bank_to_category: dict[str, str] = {}
@@ -180,23 +180,27 @@ def build_site_data() -> dict[str, object]:
             if bank_dir.is_dir():
                 bank_to_category[bank_dir.name] = category_name
 
+    # Build flat bank list preserving manifest order, and read each bank's data
+    flat_manifest: list[str] = []
     banks: dict[str, object] = {}
-    for item in manifest:
-        bank_key = str(item).strip()
-        if not bank_key:
+    for item in manifest_raw.values():
+        if not isinstance(item, list):
             continue
-        category = bank_to_category.get(bank_key)
-        if category:
-            # Read from category subdirectory
-            banks[bank_key] = read_json(BANKS_DIR / category / bank_key / "data.json")
-        else:
-            # Fall back to flat directory (backward compatibility)
-            flat_path = BANKS_DIR / bank_key / "data.json"
-            if flat_path.exists():
-                banks[bank_key] = read_json(flat_path)
-            else:
-                print(f"Warning: Bank '{bank_key}' not found in any category directory under assets/banks/")
+        for bank_key in item:
+            bank_key = str(bank_key).strip()
+            if not bank_key:
                 continue
+            flat_manifest.append(bank_key)
+            category = bank_to_category.get(bank_key)
+            if category:
+                banks[bank_key] = read_json(BANKS_DIR / category / bank_key / "data.json")
+            else:
+                flat_path = BANKS_DIR / bank_key / "data.json"
+                if flat_path.exists():
+                    banks[bank_key] = read_json(flat_path)
+                else:
+                    print(f"Warning: Bank '{bank_key}' not found in any category directory under assets/banks/")
+                    continue
 
     referral = read_json(ASSETS_DIR / "referral.json")
     footer_links = read_json(ASSETS_DIR / "footer-links.json")
@@ -204,7 +208,8 @@ def build_site_data() -> dict[str, object]:
     regions = read_json(ASSETS_DIR / "regions.json")
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
-        "manifest": manifest,
+        "manifest": flat_manifest,
+        "manifestCategories": manifest_raw,
         "banks": banks,
         "bankToCategory": bank_to_category,
         "referral": referral,

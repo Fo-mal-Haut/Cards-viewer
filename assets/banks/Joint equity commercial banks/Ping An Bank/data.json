@@ -9,19 +9,7 @@
     "logo": "logo.svg"
   },
   "cards": [
-    {
-      "name": "汽融低碳生活主题借记卡",
-      "type": "Debit",
-      "organization": "UnionPay",
-      "tier": "Standard",
-      "bin": "623058",
-      "currency": ["CNY"],
-      "desc": "",
-      "benefit": "",
-      "ext": "png",
-      "status": "active",
-      "acquired": ""
-    },
+
     {
       "name": "华南理工大学联名卡",
       "type": "Debit",

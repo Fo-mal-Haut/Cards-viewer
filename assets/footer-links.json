@@ -8,6 +8,10 @@
           "url": "/docs/organization.html"
         },
         {
+          "label": "银行卡基本属性",
+          "url": "/docs/element.html"
+        },
+        {
           "label": "开户邀请",
           "url": "/referral.html"
         },
