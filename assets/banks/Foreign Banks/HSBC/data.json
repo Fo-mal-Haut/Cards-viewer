@@ -1,0 +1,93 @@
+{
+  "bank": {
+    "native_name": "香港上海滙豐銀行",
+    "english_name": "HSBC",
+    "region": "HK",
+    "url": "http://www.hsbc.com.hk",
+    "tag": "foreign",
+    "logo": "apple-touch-icon.png"
+  },
+  "cards": [
+    {
+      "name": "HSBC One ATM Card 滙豐One自動櫃員機卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "621443",
+      "currency": [
+        "HKD",
+        "CNY",
+        "USD",
+        "EUR",
+        "GBP",
+        "JPY",
+        "CAD",
+        "AUD",
+        "NZD",
+        "SGD",
+        "CHF",
+        "THB"
+      ],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "branch": "马鞍山分行",
+      "acquired": "2026-04",
+      "withdrawal": {
+        "overseas": {
+          "HSBC": "20HKD",
+          "BancNet": "20HKD",
+          "VISA": "40HKD",
+          "MasterCard": "40HKD",
+          "UnionPay": "50HKD"
+        },
+        "local": {
+          "HSBC": "0",
+          "VISA": "25HKD",
+          "MasterCard": "25HKD",
+          "UnionPay": "15HKD"
+        }
+      }
+    },
+    {
+      "name": "HSBC Mastercard Debit 滙豐萬事達卡扣賬卡",
+      "type": "Debit",
+      "organization": "Mastercard",
+      "tier": "World",
+      "bin": "541375",
+      "currency": [
+        "HKD",
+        "CNY",
+        "USD",
+        "EUR",
+        "GBP",
+        "JPY",
+        "CAD",
+        "AUD",
+        "NZD",
+        "SGD",
+        "CHF",
+        "THB"
+      ],
+      "desc": "https://www.hsbc.com.hk/zh-cn/debit-cards/products/mastercard-debit-card/",
+      "benefit": "所有消费免收手续费。\n全球汇丰ATM免费提款。\n所有合资格签账免收外币交易费，更可享0.4％现金回赠。\n可申请附属借记卡。",
+      "ext": "jpg",
+      "status": "active",
+      "branch": "马鞍山分行",
+      "acquired": "2026-04",
+      "ftf": "0%",
+      "alt_image": "HSBC Mastercard Debit 滙豐萬事達卡扣賬卡v.png",
+      "withdrawal": {
+        "overseas": {
+          "HSBC": "0",
+          "MasterCard": "40HKD"
+        },
+        "local": {
+          "HSBC": "0",
+          "MasterCard": "25HKD"
+        }
+      }
+    }
+  ]
+}

@@ -61,7 +61,12 @@
     ) {
       return text;
     }
-    return assetPath("assets", "banks", bankKey, text);
+    const preloaded = getPreloadedSiteData();
+    const category = preloaded?.bankToCategory?.[bankKey] || "";
+    const parts = ["assets", "banks"];
+    if (category) parts.push(category);
+    parts.push(bankKey, text);
+    return assetPath(...parts);
   }
 
   function toArray(value) {
@@ -314,7 +319,11 @@
       const bankKey = resolveAssetFolderKey(item);
       if (!bankKey) continue;
 
-      const url = assetPath("assets", "banks", bankKey, "data.json");
+      const category = preloaded?.bankToCategory?.[bankKey] || "";
+      const parts = ["assets", "banks"];
+      if (category) parts.push(category);
+      parts.push(bankKey, "data.json");
+      const url = assetPath(...parts);
       const data =
         preloaded?.banks?.[bankKey] || (await fetchJsonSafe(url, { warn }));
       if (!data || !data.bank || !Array.isArray(data.cards)) {

@@ -1,0 +1,26 @@
+{
+  "bank": {
+    "native_name": "眾安銀行",
+    "english_name": "ZA Bank",
+    "region": "HK",
+    "url": "http://bank.za.group",
+    "tag": "digital",
+    "logo": "logo-40.svg"
+  },
+  "cards": [
+    {
+      "name": "ZA Card",
+      "type": "Debit",
+      "organization": "VISA",
+      "tier": "Classic",
+      "bin": "448060",
+      "currency": ["HKD"],
+      "desc": "https://bank.za.group/hk/za-card",
+      "benefit": "PowerDraw x ZA Card 单笔 HKD 10 或以上消费可享高達 200% ZA Coin 回贈。\nStockBack x ZA Card 1.5% 無上限回贈。\n取现每月8万港元的累计免手续费额度（涵盖本地及海外），超出部分将收取1%的手续费。",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2026-04",
+      "ftf": "1.95%(Visa收取1%, ZA Bank 收取0.95%)"
+    }
+  ]
+}

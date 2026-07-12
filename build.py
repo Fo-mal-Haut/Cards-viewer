@@ -170,12 +170,33 @@ def build_site_data() -> dict[str, object]:
     if not isinstance(manifest, list):
         raise ValueError("assets/manifest.json must be an array")
 
+    # Build bank-to-category mapping by scanning category directories
+    bank_to_category: dict[str, str] = {}
+    for entry in sorted(BANKS_DIR.iterdir()):
+        if not entry.is_dir():
+            continue
+        category_name = entry.name
+        for bank_dir in sorted(entry.iterdir()):
+            if bank_dir.is_dir():
+                bank_to_category[bank_dir.name] = category_name
+
     banks: dict[str, object] = {}
     for item in manifest:
         bank_key = str(item).strip()
         if not bank_key:
             continue
-        banks[bank_key] = read_json(BANKS_DIR / bank_key / "data.json")
+        category = bank_to_category.get(bank_key)
+        if category:
+            # Read from category subdirectory
+            banks[bank_key] = read_json(BANKS_DIR / category / bank_key / "data.json")
+        else:
+            # Fall back to flat directory (backward compatibility)
+            flat_path = BANKS_DIR / bank_key / "data.json"
+            if flat_path.exists():
+                banks[bank_key] = read_json(flat_path)
+            else:
+                print(f"Warning: Bank '{bank_key}' not found in any category directory under assets/banks/")
+                continue
 
     referral = read_json(ASSETS_DIR / "referral.json")
     footer_links = read_json(ASSETS_DIR / "footer-links.json")
@@ -185,6 +206,7 @@ def build_site_data() -> dict[str, object]:
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "manifest": manifest,
         "banks": banks,
+        "bankToCategory": bank_to_category,
         "referral": referral,
         "footerLinks": footer_links,
         "binOverlays": bin_overlays,
