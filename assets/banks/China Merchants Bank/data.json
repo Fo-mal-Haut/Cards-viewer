@@ -25,7 +25,8 @@
       "benefit": "",
       "ext": "png",
       "status": "active",
-      "acquired": "2026-04"
+      "acquired": "2026-04-21",
+      "branch": "东莞分行营业部"
     },
     {
       "name": "明日方舟联名储蓄卡 (白色报童阿米娅)",
@@ -38,7 +39,8 @@
       "benefit": "",
       "ext": "jpg",
       "status": "active",
-      "acquired": "2026-04",
+      "acquired": "2026-04-29",
+      "branch": "广州分行广州环市东路支行",
       "alt_image": "明日方舟联名储蓄卡 (白色报童阿米娅).png"
     },
     {
@@ -52,7 +54,8 @@
       "benefit": "免每月首笔境外ATM取款发卡行手续费；\n免境外ATM查询手续费；\n享境外消费汇率补贴返现（5‰）。",
       "ext": "webp",
       "status": "active",
-      "acquired": "2026-05"
+      "acquired": "2026-05-14",
+      "branch": "广州分行广州天河北路支行"
     },
     {
       "name": "银联初音未来信用卡未来境遇版",
@@ -65,7 +68,7 @@
       "benefit": "首年免年费，每年消费6次免次年年费",
       "ext": "png",
       "status": "active",
-      "acquired": "2026-04-17",
+      "acquired": "2026-04-21",
       "alt_image": "银联初音未来信用卡未来境遇版v.png",
       "annual_fee": "300元",
       "ftf": "0%"

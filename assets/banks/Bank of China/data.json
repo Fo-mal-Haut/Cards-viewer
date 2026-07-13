@@ -20,7 +20,8 @@
       "benefit": "",
       "ext": "png",
       "status": "active",
-      "acquired": "2026-05",
+      "acquired": "2026-04-27",
+      "branch": "广东省分行广州分行广州五山支行",
       "alt_image": "长城借记卡.png"
     },
     {
@@ -34,7 +35,22 @@
       "benefit": "",
       "ext": "png",
       "status": "active",
-      "acquired": "2026-05"
+      "acquired": "2026-05",
+      "branch": "广东省分行广州分行广州番禺支行营业部"
+    },
+    {
+      "name": "VISA冬奥借记卡（黑色）",
+      "type": "Debit",
+      "organization": "VISA",
+      "tier": "Signature",
+      "bin": "400515",
+      "currency": ["USD"],
+      "desc": "",
+      "benefit": "境外交易手续费：\n（1）境外ATM/柜台取现手续费标准为取现金额的0.5%，最高5美元，最低3美元。ATM查询收费标准为0.5美元/笔。\n（2）减免每月首笔境外ATM/柜台取现和查询手续费。",
+      "ext": "png",
+      "status": "inactive",
+      "acquired": "2026-07",
+      "branch": "广东省分行广州分行广州天河支行营业部"
     },
     {
       "name": "长城环球通白金信用卡",
