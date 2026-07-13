@@ -1,7 +1,7 @@
 ﻿const TYPE_DEFINITIONS = [
   { id: "debit", label: "借记卡" },
-  { id: "prepaid", label: "预付卡" },
   { id: "credit", label: "信用卡" },
+  { id: "prepaid", label: "预付卡" },
   { id: "transit", label: "交通卡" },
 ];
 
@@ -121,15 +121,14 @@ const TIER_ORDER_MAP = {
     "World Legend",
     "World Elite",
     "World",
-    "Platinum",
     "Titanium",
+    "Platinum",
     "Gold",
     "Standard",
   ],
   VISA: ["Infinite", "Signature", "Platinum", "Gold", "Classic"],
   AMEX: [
-    "Centurion",
-    "Icon",
+    ["Centurion", "Icon"],
     "Platinum",
     "Max",
     "Gold",
@@ -138,9 +137,29 @@ const TIER_ORDER_MAP = {
     "Member",
   ],
   UnionPay: ["Diamond", "Platinum", "Gold", "Standard"],
-  JCB: ["Eternity", "Precious", "Platinum", "Gold"],
+  JCB: ["Ultimate", "Platinum", "Gold", "Standard"],
   "China T-Union": [],
 };
+
+const GLOBAL_TIER_ORDER = [
+  ["World Legend"],
+  ["World Elite"],
+  ["World"],
+  ["Infinite"],
+  ["Signature"],
+  ["Centurion", "Icon"],
+  ["Diamond"],
+  ["Ultimate"],
+  ["Titanium"],
+  ["Platinum"],
+  ["Max"],
+  ["Gold"],
+  ["Select"],
+  ["Green"],
+  ["Classic"],
+  ["Standard"],
+  ["Member"],
+];
 
 let cards = [];
 let issuerFilterValue = "all";
@@ -148,7 +167,8 @@ let issuerFilterHoverTag = "all";
 let regionFilterValue = "all";
 let regionFilterHoverRegion = "all";
 let expandedTypeCounts = {};
-let sortMode = "default";
+let sortMode = "organization";
+let cardViewMode = "all";
 let lightboxImages = [];
 let lightboxIndex = 0;
 let pendingOrganizationFilterValue = "all";
@@ -213,6 +233,7 @@ const regionFilterGroups = document.querySelector("#regionFilterGroups");
 const regionFilterProvinces = document.querySelector("#regionFilterProvinces");
 const statusFilter = document.querySelector("#statusFilter");
 const sortToggle = document.querySelector("#sortToggle");
+const cardViewToggle = document.querySelector("#cardViewToggle");
 
 function normalizeOrganizationName(value) {
   const text = String(value || "").trim();
@@ -282,6 +303,17 @@ function parseStatusQueryValue(value) {
   return "all";
 }
 
+function parseCardViewQueryValue(value) {
+  return ["physical", "virtual"].includes(value) ? value : "all";
+}
+
+function parseSortQueryValue(value) {
+  if (value === "default") return "organization";
+  return ["organization", "acquired", "tier"].includes(value)
+    ? value
+    : "organization";
+}
+
 function getRegionQueryValue(value) {
   if (value === "all") return "all";
   if (value.startsWith("region:")) {
@@ -323,10 +355,23 @@ function getTierRank(organization, tier) {
   const normalizedTier = String(tier || "")
     .trim()
     .toLowerCase();
-  const index = tiers.findIndex(
-    (item) => item.toLowerCase() === normalizedTier,
-  );
+  const index = tiers.findIndex((item) => {
+    const tierNames = Array.isArray(item) ? item : [item];
+    return tierNames.some(
+      (tierName) => tierName.toLowerCase() === normalizedTier,
+    );
+  });
   return index === -1 ? tiers.length : index;
+}
+
+function getGlobalTierRank(tier) {
+  const normalizedTier = String(tier || "")
+    .trim()
+    .toLowerCase();
+  const index = GLOBAL_TIER_ORDER.findIndex((tierGroup) =>
+    tierGroup.some((tierName) => tierName.toLowerCase() === normalizedTier),
+  );
+  return index === -1 ? GLOBAL_TIER_ORDER.length : index;
 }
 
 function getBankTagRank(tag) {
@@ -358,7 +403,8 @@ function getUrlState() {
     issuer: params.get("issuer") || "all",
     region: parseRegionQueryValue(params.get("region") || "all"),
     status: parseStatusQueryValue(params.get("status") || "all"),
-    sort: params.get("sort") || "default",
+    sort: parseSortQueryValue(params.get("sort") || "organization"),
+    cardView: parseCardViewQueryValue(params.get("cardView") || "all"),
   };
 }
 
@@ -379,7 +425,8 @@ function updateUrlState() {
     params.set("region", getRegionQueryValue(regionFilterValue));
   }
   if (status !== "all") params.set("status", status);
-  if (sortMode !== "default") params.set("sort", sortMode);
+  if (sortMode !== "organization") params.set("sort", sortMode);
+  if (cardViewMode !== "all") params.set("cardView", cardViewMode);
 
   const query = params.toString();
   const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
@@ -397,7 +444,8 @@ function applyUrlState(state = getUrlState()) {
     statusFilter.value = parseStatusQueryValue(state.status);
   }
 
-  sortMode = state.sort === "acquired" ? "acquired" : "default";
+  sortMode = parseSortQueryValue(state.sort);
+  cardViewMode = parseCardViewQueryValue(state.cardView);
 
   issuerFilterValue = pendingIssuerFilterValue;
   if (issuerFilterValue.startsWith("tag:")) {
@@ -1045,16 +1093,46 @@ function compareAcquiredDesc(a, b) {
   return compareCards(a, b);
 }
 
+function compareTier(a, b) {
+  const tierDiff =
+    getGlobalTierRank(a.tier) - getGlobalTierRank(b.tier);
+  if (tierDiff !== 0) return tierDiff;
+
+  const organizationDiff =
+    getOrganizationRank(a.organization) - getOrganizationRank(b.organization);
+  if (organizationDiff !== 0) return organizationDiff;
+
+  const issuerDiff = compareText(a.issuer, b.issuer);
+  if (issuerDiff !== 0) return issuerDiff;
+
+  return compareText(a.name, b.name);
+}
+
 function sortCards(list) {
+  const comparator =
+    sortMode === "acquired"
+      ? compareAcquiredDesc
+      : sortMode === "tier"
+        ? compareTier
+        : compareCards;
   return list
     .slice()
-    .sort(sortMode === "acquired" ? compareAcquiredDesc : compareCards);
+    .sort(comparator);
 }
 
 function updateSortToggleState() {
   if (!sortToggle) return;
   sortToggle.querySelectorAll("[data-sort-mode]").forEach((button) => {
     const active = button.dataset.sortMode === sortMode;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+function updateCardViewToggleState() {
+  if (!cardViewToggle) return;
+  cardViewToggle.querySelectorAll("[data-card-view]").forEach((button) => {
+    const active = button.dataset.cardView === cardViewMode;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
@@ -1344,11 +1422,15 @@ function cardMatches(card) {
     .toLowerCase();
   const organization = organizationFilter?.value || "all";
   const status = statusFilter?.value || "all";
+  const cardViewMatches =
+    cardViewMode === "all" ||
+    (cardViewMode === "virtual" ? card.virtual : !card.virtual);
 
   return (
     (organization === "all" ||
       normalizeOrganizationName(card.organization) === organization) &&
     (status === "all" || card.status === status) &&
+    cardViewMatches &&
     cardMatchesIssuer(card, issuerFilterValue) &&
     cardMatchesRegion(card, regionFilterValue) &&
     (!search || buildSearchableText(card).includes(search))
@@ -1591,10 +1673,22 @@ function bindEvents() {
   if (sortToggle) {
     sortToggle.querySelectorAll("[data-sort-mode]").forEach((button) => {
       button.addEventListener("click", () => {
-        const nextMode = button.dataset.sortMode || "default";
+        const nextMode = parseSortQueryValue(button.dataset.sortMode);
         if (nextMode === sortMode) return;
         sortMode = nextMode;
         updateSortToggleState();
+        render();
+      });
+    });
+  }
+
+  if (cardViewToggle) {
+    cardViewToggle.querySelectorAll("[data-card-view]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextMode = parseCardViewQueryValue(button.dataset.cardView);
+        if (nextMode === cardViewMode) return;
+        cardViewMode = nextMode;
+        updateCardViewToggleState();
         render();
       });
     });
@@ -1680,6 +1774,7 @@ async function init() {
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
   updateSortToggleState();
+  updateCardViewToggleState();
   render();
 
   await loadCardsFromAssetsProgressively(mapCardEntry, {
@@ -1707,6 +1802,7 @@ window.addEventListener("popstate", () => {
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
   updateSortToggleState();
+  updateCardViewToggleState();
   render();
 });
 init();

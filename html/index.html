@@ -117,7 +117,44 @@
           </select>
         </label>
       </section>
-      <section class="sort-toggle-row" aria-label="排序方式">
+      <div class="sort-controls-row">
+        <section class="sort-toggle-row card-view-toggle-row" aria-label="卡片类型">
+          <div
+            class="sort-toggle card-view-toggle"
+            id="cardViewToggle"
+            role="tablist"
+            aria-label="卡片类型"
+          >
+            <button
+              class="sort-toggle-option is-active"
+              id="cardViewAll"
+              type="button"
+              data-card-view="all"
+              aria-pressed="true"
+            >
+              显示所有卡
+            </button>
+            <button
+              class="sort-toggle-option"
+              id="cardViewPhysical"
+              type="button"
+              data-card-view="physical"
+              aria-pressed="false"
+            >
+              只显示实体卡
+            </button>
+            <button
+              class="sort-toggle-option"
+              id="cardViewVirtual"
+              type="button"
+              data-card-view="virtual"
+              aria-pressed="false"
+            >
+              只显示虚拟卡
+            </button>
+          </div>
+        </section>
+        <section class="sort-toggle-row" aria-label="排序方式">
         <div
           class="sort-toggle"
           id="sortToggle"
@@ -126,12 +163,21 @@
         >
           <button
             class="sort-toggle-option is-active"
-            id="sortDefault"
+            id="sortOrganization"
             type="button"
-            data-sort-mode="default"
+            data-sort-mode="organization"
             aria-pressed="true"
           >
             按卡组织排序
+          </button>
+          <button
+            class="sort-toggle-option"
+            id="sortTier"
+            type="button"
+            data-sort-mode="tier"
+            aria-pressed="false"
+          >
+            按卡等级排序
           </button>
           <button
             class="sort-toggle-option"
@@ -143,7 +189,8 @@
             按获得时间排序
           </button>
         </div>
-      </section>
+        </section>
+      </div>
       <div id="cardSections" class="sections" aria-live="polite"></div>
     </main>
 
