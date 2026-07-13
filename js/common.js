@@ -423,6 +423,38 @@
     );
   }
 
+  const cookieConsentKey = "cards-viewer-cookie-consent";
+
+  function hasCookieConsent() {
+    return document.cookie
+      .split("; ")
+      .some((cookie) => cookie === `${cookieConsentKey}=accepted`);
+  }
+
+  function setCookieConsent() {
+    document.cookie = `${cookieConsentKey}=accepted; max-age=31536000; path=/; SameSite=Lax`;
+  }
+
+  function setupCookieNotice() {
+    if (hasCookieConsent()) return;
+
+    const notice = document.createElement("aside");
+    notice.className = "cookie-notice";
+    notice.setAttribute("aria-label", "Cookie 使用提示");
+    notice.innerHTML = `
+      <p>本网站使用 Cookies 帮助改善浏览体验。“接受”即表示阁下同意我们的数据处理，或者“拒绝”同意。</p>
+      <button type="button">接受</button>
+      <button type="button">拒绝</button>
+    `;
+
+    notice.querySelector("button")?.addEventListener("click", () => {
+      setCookieConsent();
+      notice.remove();
+    });
+
+    document.body.append(notice);
+  }
+
   const savedTheme = getSavedTheme();
   if (savedTheme) {
     document.documentElement.dataset.theme = savedTheme;
@@ -695,5 +727,6 @@
     updateBackToTopState();
   }
 
+  setupCookieNotice();
   loadFooterLinks().then(renderFooterLinks);
 })();
