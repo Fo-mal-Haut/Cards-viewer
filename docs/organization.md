@@ -24,6 +24,7 @@ date: 2026-07-11
 - [境外万事达priceless specials](https://specials.priceless.com/zh-hk/homepage)
 - [万事达priceless优惠](https://www.priceless.com/filter/options?tab=offers) (部分优惠需输入卡号领取)
 - [JCB境外优惠精选](https://jcb.brshnet.cn/)
+- [万事达消费大挑战](https://mcc.xunliandata.com/b-plus/reward/index.html#/qwedyp/rule?pageId=rule&time=5)
 
 ## 卡组织官网
 
