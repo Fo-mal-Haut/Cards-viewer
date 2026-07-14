@@ -18,9 +18,10 @@
       "currency": ["CNY"],
       "desc": "",
       "benefit": "",
-      "ext": "png",
+      "ext": "jpg",
       "status": "active",
-      "acquired": ""
+      "acquired": "2011-02-28",
+      "branch": "东莞银行股份有限公司长安莲峰支行"
     }
   ]
 }

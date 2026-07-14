@@ -1,0 +1,28 @@
+{
+  "bank": {
+    "native_name": "中国银行（香港）",
+    "english_name": "Bank of China (Hong Kong)",
+    "region": "HK",
+    "url": "https://www.bochk.com/sc/home.html",
+    "tag": "foreign",
+    "logo": "boc-logo-128.png"
+  },
+  "cards": [
+    {
+      "name": "中銀卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Standard",
+      "bin": "623040",
+      "currency": [
+        "CNY"
+      ],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "branch": "沙田分行",
+      "acquired": "2026-04"
+    }
+  ]
+}

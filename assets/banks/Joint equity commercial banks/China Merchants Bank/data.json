@@ -25,7 +25,24 @@
       "benefit": "免每月首笔境外ATM取款发卡行手续费；\n免境外ATM查询手续费；\n享境外消费汇率补贴返现（5‰）。",
       "ext": "webp",
       "status": "active",
-      "acquired": "2026-05"
+      "acquired": "2026-05",
+      "branch": "广州天河北路支行",
+      "link": "https://market.cmbchina.com/MPage/online/240708104147586/ofwf.html"
+    },
+    {
+      "name": "招商银行招财卡",
+      "type": "Debit",
+      "organization": "UnionPay",
+      "tier": "Platinum",
+      "bin": "621483",
+      "currency": ["CNY"],
+      "desc": "",
+      "benefit": "",
+      "ext": "png",
+      "status": "active",
+      "acquired": "2025-11",
+      "branch": "广州天河北路支行",
+      "link": "https://mobile.cmbchina.com/dcamobile/applycard/fillapplyinfo.html?Organization=100531&AuthCode=&_urlrefer=VIR&FamilyBranchId=&BranchID=100&RecmCode=&FamilyOriginCode=&FamilyCorperationCode=&wechatData=&appflag=0&FamilyRecmCode=&FamilyOrganization=&CorperationCode=T01211GCA000000000000100qjflby016035000000000000000000000000&FamilyUtmId="
     }
   ]
 }
