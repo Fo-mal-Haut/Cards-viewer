@@ -526,7 +526,7 @@
       return `${amountLabel}=${cardAmount}，手续费${fee}，预估总额${total}`;
     };
     const formatOption = (option) =>
-      `使用${option.issuer}的【${option.name}】透过【${option.network}】网络取款`;
+      `${option.issuer}【${option.name}】透过【${option.network}】网络取款`;
     const groups = [];
     const groupMap = new Map();
     options.forEach((option) => {
@@ -549,9 +549,7 @@
     const appendGroup = (group) => {
       const item = document.createElement("li");
       item.append(
-        document.createTextNode(
-          `${formatFeeSummary(group.options[0])}，适用卡片：`,
-        ),
+        document.createTextNode(`${formatFeeSummary(group.options[0])}：`),
       );
       const nestedList = document.createElement("ul");
       group.options.forEach((option) => {
