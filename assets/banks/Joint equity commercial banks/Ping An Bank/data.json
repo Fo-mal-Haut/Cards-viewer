@@ -1,4 +1,3 @@
-<<<<<<< HEAD:assets/banks/Joint equity commercial banks/Ping An Bank/data.json
 {
   "bank": {
     "native_name": "平安银行",
@@ -26,44 +25,3 @@
     }
   ]
 }
-=======
-{
-  "bank": {
-    "native_name": "平安银行",
-    "english_name": "Ping An Bank",
-    "region": "CN",
-    "url": "https://bank.pingan.com",
-    "tag": "stock",
-    "province": "广东",
-    "logo": "logo.svg"
-  },
-  "cards": [
-    {
-      "name": "汽融低碳生活主题借记卡",
-      "type": "Debit",
-      "organization": "UnionPay",
-      "tier": "Standard",
-      "bin": "623058",
-      "currency": ["CNY"],
-      "desc": "",
-      "benefit": "",
-      "ext": "png",
-      "status": "active",
-      "acquired": ""
-    },
-    {
-      "name": "华南理工大学联名卡",
-      "type": "Debit",
-      "organization": "UnionPay",
-      "tier": "Standard",
-      "bin": "623058",
-      "currency": ["CNY"],
-      "desc": "",
-      "benefit": "",
-      "ext": "png",
-      "status": "active",
-      "acquired": "2026-05-15"
-    }
-  ]
-}
->>>>>>> 4795cdebadfef1bba443c9a3f87532623421003b:assets/banks/Ping An Bank/data.json
