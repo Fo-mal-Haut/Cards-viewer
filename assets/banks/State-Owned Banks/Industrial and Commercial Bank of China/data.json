@@ -44,7 +44,7 @@
       "organization": "VISA",
       "tier": "Standard",
       "bin": "450547",
-      "currency": ["CNY", "USD", "EUR", "HKD", "GBP", "JPY", "SGD", "CAD", "AUD", "CHF", "NZD"],
+      "currency": ["USD", "EUR", "HKD", "GBP", "JPY", "SGD", "CAD", "AUD", "CHF", "NZD"],
       "desc": "星座卡“1+1”办卡：境内使用银联单标识单币卡（磁条+ PBOC非接芯片卡），境外使用VISA单标识多币种卡（磁条+ EMV非接芯片卡），两卡账户关联，支持刷、插、挥、扫全支付模式，境内外支付畅行无阻。",
       "benefit": "",
       "ext": "jpg",

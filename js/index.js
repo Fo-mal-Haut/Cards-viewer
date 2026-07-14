@@ -167,8 +167,6 @@ let issuerFilterHoverTag = "all";
 let regionFilterValue = "all";
 let regionFilterHoverRegion = "all";
 let expandedTypeCounts = {};
-let sortMode = "organization";
-let cardViewMode = "all";
 let lightboxImages = [];
 let lightboxIndex = 0;
 let pendingOrganizationFilterValue = "all";
@@ -232,8 +230,6 @@ const regionFilterPanel = document.querySelector("#regionFilterPanel");
 const regionFilterGroups = document.querySelector("#regionFilterGroups");
 const regionFilterProvinces = document.querySelector("#regionFilterProvinces");
 const statusFilter = document.querySelector("#statusFilter");
-const sortToggle = document.querySelector("#sortToggle");
-const cardViewToggle = document.querySelector("#cardViewToggle");
 
 function normalizeOrganizationName(value) {
   const text = String(value || "").trim();
@@ -301,17 +297,6 @@ function parseStatusQueryValue(value) {
   const status = normalizeCardStatus(value);
   if (status === "all" || isKnownStatus(status)) return status;
   return "all";
-}
-
-function parseCardViewQueryValue(value) {
-  return ["physical", "virtual"].includes(value) ? value : "all";
-}
-
-function parseSortQueryValue(value) {
-  if (value === "default") return "organization";
-  return ["organization", "acquired", "tier"].includes(value)
-    ? value
-    : "organization";
 }
 
 function getRegionQueryValue(value) {
@@ -403,8 +388,6 @@ function getUrlState() {
     issuer: params.get("issuer") || "all",
     region: parseRegionQueryValue(params.get("region") || "all"),
     status: parseStatusQueryValue(params.get("status") || "all"),
-    sort: parseSortQueryValue(params.get("sort") || "organization"),
-    cardView: parseCardViewQueryValue(params.get("cardView") || "all"),
   };
 }
 
@@ -425,8 +408,6 @@ function updateUrlState() {
     params.set("region", getRegionQueryValue(regionFilterValue));
   }
   if (status !== "all") params.set("status", status);
-  if (sortMode !== "organization") params.set("sort", sortMode);
-  if (cardViewMode !== "all") params.set("cardView", cardViewMode);
 
   const query = params.toString();
   const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
@@ -443,9 +424,6 @@ function applyUrlState(state = getUrlState()) {
   if (statusFilter) {
     statusFilter.value = parseStatusQueryValue(state.status);
   }
-
-  sortMode = parseSortQueryValue(state.sort);
-  cardViewMode = parseCardViewQueryValue(state.cardView);
 
   issuerFilterValue = pendingIssuerFilterValue;
   if (issuerFilterValue.startsWith("tag:")) {
@@ -1108,36 +1086,6 @@ function compareTier(a, b) {
   return compareText(a.name, b.name);
 }
 
-function sortCards(list) {
-  const comparator =
-    sortMode === "acquired"
-      ? compareAcquiredDesc
-      : sortMode === "tier"
-        ? compareTier
-        : compareCards;
-  return list
-    .slice()
-    .sort(comparator);
-}
-
-function updateSortToggleState() {
-  if (!sortToggle) return;
-  sortToggle.querySelectorAll("[data-sort-mode]").forEach((button) => {
-    const active = button.dataset.sortMode === sortMode;
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-}
-
-function updateCardViewToggleState() {
-  if (!cardViewToggle) return;
-  cardViewToggle.querySelectorAll("[data-card-view]").forEach((button) => {
-    const active = button.dataset.cardView === cardViewMode;
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-}
-
 function formatOrganizationTier(card) {
   const parts = [];
   if (card.organization) parts.push(card.organization);
@@ -1422,15 +1370,11 @@ function cardMatches(card) {
     .toLowerCase();
   const organization = organizationFilter?.value || "all";
   const status = statusFilter?.value || "all";
-  const cardViewMatches =
-    cardViewMode === "all" ||
-    (cardViewMode === "virtual" ? card.virtual : !card.virtual);
 
   return (
     (organization === "all" ||
       normalizeOrganizationName(card.organization) === organization) &&
     (status === "all" || card.status === status) &&
-    cardViewMatches &&
     cardMatchesIssuer(card, issuerFilterValue) &&
     cardMatchesRegion(card, regionFilterValue) &&
     (!search || buildSearchableText(card).includes(search))
@@ -1596,7 +1540,7 @@ function render() {
   pendingRegionFilterValue = regionFilterValue;
   updateUrlState();
 
-  const filteredCards = sortCards(cards.filter(cardMatches));
+  const filteredCards = cards.filter(cardMatches);
   renderStats(filteredCards);
   sectionRoot.innerHTML = "";
 
@@ -1667,30 +1611,6 @@ function bindEvents() {
       } else {
         closeRegionFilterPanel();
       }
-    });
-  }
-
-  if (sortToggle) {
-    sortToggle.querySelectorAll("[data-sort-mode]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const nextMode = parseSortQueryValue(button.dataset.sortMode);
-        if (nextMode === sortMode) return;
-        sortMode = nextMode;
-        updateSortToggleState();
-        render();
-      });
-    });
-  }
-
-  if (cardViewToggle) {
-    cardViewToggle.querySelectorAll("[data-card-view]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const nextMode = parseCardViewQueryValue(button.dataset.cardView);
-        if (nextMode === cardViewMode) return;
-        cardViewMode = nextMode;
-        updateCardViewToggleState();
-        render();
-      });
     });
   }
 
@@ -1773,14 +1693,12 @@ async function init() {
   updateOrganizationFilterOptions();
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
-  updateSortToggleState();
-  updateCardViewToggleState();
   render();
 
   await loadCardsFromAssetsProgressively(mapCardEntry, {
     warn: true,
     onBatch(batch) {
-      cards = sortCards(cards.concat(batch));
+      cards = cards.concat(batch);
       updateOrganizationFilterOptions();
       updateIssuerFilterOptions();
       updateRegionFilterOptions();
@@ -1801,8 +1719,6 @@ window.addEventListener("popstate", () => {
   updateOrganizationFilterOptions();
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
-  updateSortToggleState();
-  updateCardViewToggleState();
   render();
 });
 init();
