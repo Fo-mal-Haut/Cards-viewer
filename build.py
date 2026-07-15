@@ -281,6 +281,7 @@ def parse_markdown_metadata(markdown: str) -> tuple[str, dict[str, str]]:
 
 INLINE_CODE_PATTERN = re.compile(r"`([^`]+)`")
 STRONG_PATTERN = re.compile(r"\*\*([^*]+)\*\*")
+EM_PATTERN = re.compile(r"\*([^*]+)\*")
 MARKDOWN_LINK_PATTERN = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 BARE_URL_PATTERN = re.compile(r'(?<!["])(https?://[^\s<]+)')
 
@@ -310,6 +311,10 @@ def render_inline(text: str) -> str:
     )
     rendered = STRONG_PATTERN.sub(
         lambda match: f"<strong>{escape_html(match.group(1))}</strong>",
+        rendered,
+    )
+    rendered = EM_PATTERN.sub(
+        lambda match: f"<em>{escape_html(match.group(1))}</em>",
         rendered,
     )
     rendered = MARKDOWN_LINK_PATTERN.sub(render_markdown_link, rendered)
@@ -485,6 +490,21 @@ def markdown_to_html(markdown: str) -> tuple[str, str]:
             table_html, next_index = table
             blocks.append(table_html)
             index = next_index
+            continue
+
+        if stripped == r"\[":
+            flush_paragraph()
+            flush_list()
+            math_lines = [stripped]
+            index += 1
+            while index < len(lines):
+                inner_line = lines[index].rstrip()
+                math_lines.append(inner_line)
+                if inner_line.strip() == r"\]":
+                    index += 1
+                    break
+                index += 1
+            blocks.append('<div class="math">\n' + "\n".join(math_lines) + "\n</div>")
             continue
 
         if stripped.startswith("- ") or stripped.startswith("* "):
