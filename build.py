@@ -303,8 +303,14 @@ def render_markdown_link(match: re.Match[str]) -> str:
     )
 
 
+BR_PLACEHOLDER = "\x00BR\x00"
+
+
 def render_inline(text: str) -> str:
-    rendered = escape_html(text.strip())
+    rendered = text.strip()
+    rendered = rendered.replace("<br>", BR_PLACEHOLDER).replace("<br/>", BR_PLACEHOLDER).replace("<br />", BR_PLACEHOLDER)
+    rendered = escape_html(rendered)
+    rendered = rendered.replace(BR_PLACEHOLDER, "<br>")
     rendered = INLINE_CODE_PATTERN.sub(
         lambda match: f"<code>{escape_html(match.group(1))}</code>",
         rendered,
@@ -380,7 +386,10 @@ def render_table_section(
                 row_coverage[column_index] = upper_cell
                 continue
 
-            align = alignments[column_index] if column_index < len(alignments) else ""
+            if tag_name == "th":
+                align = "center"
+            else:
+                align = alignments[column_index] if column_index < len(alignments) else ""
             cell_state: dict[str, object] = {
                 "align": f' class="align-{align}"' if align else "",
                 "colspan": 1,
