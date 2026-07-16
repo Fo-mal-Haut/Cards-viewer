@@ -1,15 +1,17 @@
-﻿.markdown-layout {
+﻿:root {
+  --content-max-width: 900px;
+}
+
+.markdown-layout {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 28px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .markdown-toc-desktop {
-  grid-column: 2;
-  grid-row: 1;
-  position: sticky;
+  position: fixed;
+  left: calc(50% + var(--content-max-width) / 2 + 32px);
   top: 112px;
 }
 
@@ -57,9 +59,8 @@
 }
 
 .markdown-page {
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
+  max-width: var(--content-max-width);
+  width: 100%;
   padding: 28px 32px;
   margin-bottom: 56px;
   border: 1px solid var(--line);
@@ -87,6 +88,28 @@
 .markdown-meta span {
   display: block;
   line-height: 1.6;
+}
+
+body[data-page="doc"] .hero,
+body[data-page="about"] .hero {
+  text-align: center;
+}
+
+body[data-page="doc"] .hero h1,
+body[data-page="about"] .hero h1 {
+  max-width: none;
+  margin: 0 auto;
+}
+
+body[data-page="doc"] .markdown-meta,
+body[data-page="about"] .markdown-meta {
+  text-align: center;
+}
+
+@media (max-width: 1300px) {
+  .markdown-toc-desktop {
+    display: none;
+  }
 }
 
 .markdown-status {
