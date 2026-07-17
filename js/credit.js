@@ -2,6 +2,9 @@ let cards = [];
 let pendingOrganizationFilterValue = "all";
 let pendingIssuerFilterValue = "all";
 let pendingRegionFilterValue = "all";
+let creditOrgValue = "all";
+let creditIssuerValue = "all";
+let creditRegionValue = "all";
 let initialDataLoaded = false;
 
 const cardUtils = window.cardUtils || {};
@@ -22,6 +25,7 @@ const {
   createOption,
   appendBankNameContent,
   normalizeCardStatus,
+  createFilterTag,
 } = cardUtils;
 
 const { parseCurrencyAmount, formatCurrencyDisplay } = currencyUtils;
@@ -99,23 +103,17 @@ function applyUrlState(state = getUrlState()) {
   pendingOrganizationFilterValue = state.organization || "all";
   pendingIssuerFilterValue = state.issuer || "all";
   pendingRegionFilterValue = state.region || "all";
+  creditOrgValue = pendingOrganizationFilterValue;
+  creditIssuerValue = pendingIssuerFilterValue;
+  creditRegionValue = pendingRegionFilterValue;
 }
 
 function updateUrlState() {
   const params = new URLSearchParams();
   const search = String(searchInput?.value || "").trim();
-  const organization =
-    initialDataLoaded || pendingOrganizationFilterValue === "all"
-      ? organizationFilter?.value || "all"
-      : pendingOrganizationFilterValue || "all";
-  const issuer =
-    initialDataLoaded || pendingIssuerFilterValue === "all"
-      ? issuerFilter?.value || "all"
-      : pendingIssuerFilterValue || "all";
-  const region =
-    initialDataLoaded || pendingRegionFilterValue === "all"
-      ? regionFilter?.value || "all"
-      : pendingRegionFilterValue || "all";
+  const organization = creditOrgValue;
+  const issuer = creditIssuerValue;
+  const region = creditRegionValue;
 
   if (search) params.set("search", search);
   if (issuer !== "all") params.set("issuer", issuer);
@@ -439,7 +437,7 @@ function updateFilterOptions() {
 
   if (organizationFilter) {
     organizationFilter.innerHTML = "";
-    organizationFilter.append(createOption("all", "全部卡组织"));
+    organizationFilter.append(createOption("all", "卡组织"));
     organizations.forEach((item) => {
       organizationFilter.append(createOption(item, item));
     });
@@ -450,16 +448,17 @@ function updateFilterOptions() {
     ) {
       pendingOrganizationFilterValue = currentOrganization;
     } else {
-      organizationFilter.value = organizations.includes(currentOrganization)
+      creditOrgValue = organizations.includes(currentOrganization)
         ? currentOrganization
         : "all";
-      pendingOrganizationFilterValue = organizationFilter.value;
+      pendingOrganizationFilterValue = creditOrgValue;
+      organizationFilter.selectedIndex = 0;
     }
   }
 
   if (issuerFilter) {
     issuerFilter.innerHTML = "";
-    issuerFilter.append(createOption("all", "全部发行方"));
+    issuerFilter.append(createOption("all", "发行方"));
     issuers.forEach((item) => {
       issuerFilter.append(createOption(item.value, item.label));
     });
@@ -470,16 +469,17 @@ function updateFilterOptions() {
     ) {
       pendingIssuerFilterValue = currentIssuer;
     } else {
-      issuerFilter.value = issuers.some((item) => item.value === currentIssuer)
+      creditIssuerValue = issuers.some((item) => item.value === currentIssuer)
         ? currentIssuer
         : "all";
-      pendingIssuerFilterValue = issuerFilter.value;
+      pendingIssuerFilterValue = creditIssuerValue;
+      issuerFilter.selectedIndex = 0;
     }
   }
 
   if (regionFilter) {
     regionFilter.innerHTML = "";
-    regionFilter.append(createOption("all", "全部区域"));
+    regionFilter.append(createOption("all", "区域"));
     regions.forEach((item) => {
       regionFilter.append(createOption(item, item));
     });
@@ -490,8 +490,9 @@ function updateFilterOptions() {
     ) {
       pendingRegionFilterValue = currentRegion;
     } else {
-      regionFilter.value = regions.includes(currentRegion) ? currentRegion : "all";
-      pendingRegionFilterValue = regionFilter.value;
+      creditRegionValue = regions.includes(currentRegion) ? currentRegion : "all";
+      pendingRegionFilterValue = creditRegionValue;
+      regionFilter.selectedIndex = 0;
     }
   }
 }
@@ -510,16 +511,50 @@ function closeLightbox() {
   lightboxImage.alt = "";
 }
 
+function updateActiveFilters() {
+  const container = document.querySelector("#activeFilters");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const org = creditOrgValue;
+  if (org && org !== "all") {
+    container.append(createFilterTag(org, () => {
+      creditOrgValue = "all";
+      pendingOrganizationFilterValue = "all";
+      renderRows();
+    }));
+  }
+
+  const issuer = creditIssuerValue;
+  if (issuer && issuer !== "all") {
+    const label = [...(issuerFilter?.options || [])].find(opt => opt.value === issuer)?.textContent || issuer;
+    container.append(createFilterTag(label, () => {
+      creditIssuerValue = "all";
+      pendingIssuerFilterValue = "all";
+      renderRows();
+    }));
+  }
+
+  const region = creditRegionValue;
+  if (region && region !== "all") {
+    container.append(createFilterTag(region, () => {
+      creditRegionValue = "all";
+      pendingRegionFilterValue = "all";
+      renderRows();
+    }));
+  }
+}
+
 function renderRows() {
   const search = String(searchInput?.value || "").trim().toLowerCase();
-  const organizationValue = organizationFilter?.value || "all";
-  const issuerValue = issuerFilter?.value || "all";
-  const regionValue = regionFilter?.value || "all";
+  const organizationValue = creditOrgValue;
+  const issuerValue = creditIssuerValue;
+  const regionValue = creditRegionValue;
 
   if (initialDataLoaded) {
-    pendingOrganizationFilterValue = organizationValue;
-    pendingIssuerFilterValue = issuerValue;
-    pendingRegionFilterValue = regionValue;
+    pendingOrganizationFilterValue = creditOrgValue;
+    pendingIssuerFilterValue = creditIssuerValue;
+    pendingRegionFilterValue = creditRegionValue;
   }
   updateUrlState();
 
@@ -552,6 +587,8 @@ function renderRows() {
       });
     },
   });
+
+  updateActiveFilters();
 }
 
 async function init() {
@@ -580,7 +617,14 @@ async function init() {
 
 searchInput?.addEventListener("input", renderRows);
 [organizationFilter, issuerFilter, regionFilter].forEach((control) => {
-  control?.addEventListener("change", renderRows);
+  if (!control) return;
+  control.addEventListener("change", () => {
+    if (control === organizationFilter) creditOrgValue = control.value;
+    else if (control === issuerFilter) creditIssuerValue = control.value;
+    else creditRegionValue = control.value;
+    control.selectedIndex = 0;
+    renderRows();
+  });
 });
 
 if (imageLightbox) {

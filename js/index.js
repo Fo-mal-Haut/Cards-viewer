@@ -166,6 +166,8 @@ let issuerFilterValue = "all";
 let issuerFilterHoverTag = "all";
 let regionFilterValue = "all";
 let regionFilterHoverRegion = "all";
+let organizationValue = "all";
+let statusValue = "all";
 let expandedTypeCounts = {};
 let lightboxImages = [];
 let lightboxIndex = 0;
@@ -191,6 +193,7 @@ const {
   appendBankNameContent,
   getTierAccentClass,
   normalizeCardStatus,
+  createFilterTag,
 } = cardUtils;
 
 const { formatCurrencyList } = currencyUtils;
@@ -216,7 +219,11 @@ const lightboxImage = document.querySelector("#lightboxImage");
 const lightboxPrev = document.querySelector("[data-lightbox-prev]");
 const lightboxNext = document.querySelector("[data-lightbox-next]");
 const searchInput = document.querySelector("#searchInput");
-const organizationFilter = document.querySelector("#organizationFilter");
+const organizationFilterWrap = document.querySelector("#organizationFilterWrap");
+const organizationFilterTrigger = document.querySelector("#organizationFilterTrigger");
+const organizationFilterLabel = document.querySelector("#organizationFilterLabel");
+const organizationFilterPanel = document.querySelector("#organizationFilterPanel");
+const organizationFilterBanks = document.querySelector("#organizationFilterBanks");
 const issuerFilterWrap = document.querySelector("#issuerFilterWrap");
 const issuerFilterTrigger = document.querySelector("#issuerFilterTrigger");
 const issuerFilterLabel = document.querySelector("#issuerFilterLabel");
@@ -227,9 +234,12 @@ const regionFilterWrap = document.querySelector("#regionFilterWrap");
 const regionFilterTrigger = document.querySelector("#regionFilterTrigger");
 const regionFilterLabel = document.querySelector("#regionFilterLabel");
 const regionFilterPanel = document.querySelector("#regionFilterPanel");
-const regionFilterGroups = document.querySelector("#regionFilterGroups");
-const regionFilterProvinces = document.querySelector("#regionFilterProvinces");
-const statusFilter = document.querySelector("#statusFilter");
+const regionFilterBanks = document.querySelector("#regionFilterBanks");
+const statusFilterWrap = document.querySelector("#statusFilterWrap");
+const statusFilterTrigger = document.querySelector("#statusFilterTrigger");
+const statusFilterLabel = document.querySelector("#statusFilterLabel");
+const statusFilterPanel = document.querySelector("#statusFilterPanel");
+const statusFilterBanks = document.querySelector("#statusFilterBanks");
 
 function normalizeOrganizationName(value) {
   const text = String(value || "").trim();
@@ -394,12 +404,8 @@ function getUrlState() {
 function updateUrlState() {
   const params = new URLSearchParams();
   const search = String(searchInput?.value || "").trim();
-  const organizationOptionsLoaded = getOrganizationOptions().length > 0;
-  const organization =
-    organizationOptionsLoaded || pendingOrganizationFilterValue === "all"
-      ? organizationFilter?.value || "all"
-      : pendingOrganizationFilterValue || "all";
-  const status = statusFilter?.value || "all";
+  const organization = organizationValue;
+  const status = statusValue;
 
   if (search) params.set("search", search);
   if (issuerFilterValue !== "all") params.set("issuer", issuerFilterValue);
@@ -421,18 +427,14 @@ function applyUrlState(state = getUrlState()) {
   pendingIssuerFilterValue = state.issuer || "all";
   pendingRegionFilterValue = state.region || "all";
 
-  if (statusFilter) {
-    statusFilter.value = parseStatusQueryValue(state.status);
-  }
+  organizationValue = pendingOrganizationFilterValue;
+  statusValue = parseStatusQueryValue(state.status);
 
   issuerFilterValue = pendingIssuerFilterValue;
   if (issuerFilterValue.startsWith("tag:")) {
     issuerFilterHoverTag = normalizeBankTag(issuerFilterValue.slice(4));
   } else if (issuerFilterValue === "all") {
     issuerFilterHoverTag = "all";
-  }
-  if (issuerFilterLabel) {
-    issuerFilterLabel.textContent = getIssuerDisplayText(issuerFilterValue);
   }
 
   regionFilterValue = pendingRegionFilterValue;
@@ -443,33 +445,14 @@ function applyUrlState(state = getUrlState()) {
   } else {
     regionFilterHoverRegion = "all";
   }
-  if (regionFilterLabel) {
-    regionFilterLabel.textContent = getRegionDisplayText(regionFilterValue);
-  }
 }
 
 function initializeStaticFilters() {
-  if (statusFilter) {
-    statusFilter.innerHTML = "";
-    statusFilter.append(
-      createOption("all", "全部状态"),
-      ...Object.entries(STATUS_LABELS).map(([value, label]) =>
-        createOption(value, label),
-      ),
-    );
-  }
-
-  if (organizationFilter) {
-    organizationFilter.innerHTML = "";
-    organizationFilter.append(createOption("all", "全部卡组织"));
-  }
-
   if (issuerFilterLabel) {
-    issuerFilterLabel.textContent = "全部发行方";
+    issuerFilterLabel.textContent = "发行方";
   }
-
   if (regionFilterLabel) {
-    regionFilterLabel.textContent = "全部区域";
+    regionFilterLabel.textContent = "区域";
   }
 }
 
@@ -611,7 +594,7 @@ function getIssuerOptionsByTag(tag) {
 }
 
 function getIssuerDisplayText(value) {
-  if (value === "all") return "全部发行方";
+  if (value === "all") return "发行方";
   if (value.startsWith("tag:")) {
     return getBankTagLabel(value.slice(4));
   }
@@ -620,9 +603,9 @@ function getIssuerDisplayText(value) {
     const match = getIssuerOptions().find(
       (option) => option.value === bankValue,
     );
-    return match?.label || "全部发行方";
+    return match?.label || "";
   }
-  return "全部发行方";
+  return "";
 }
 
 function updateIssuerGroupState() {
@@ -758,10 +741,6 @@ function setIssuerFilterValue(value) {
     issuerFilterValue = "all";
     issuerFilterHoverTag = "all";
   }
-
-  if (issuerFilterLabel) {
-    issuerFilterLabel.textContent = getIssuerDisplayText(issuerFilterValue);
-  }
 }
 
 function updateIssuerFilterOptions() {
@@ -774,7 +753,9 @@ function updateIssuerFilterOptions() {
 
 function openIssuerFilterPanel() {
   if (!issuerFilterPanel || !issuerFilterTrigger) return;
+  closeOrganizationFilterPanel();
   closeRegionFilterPanel();
+  closeStatusFilterPanel();
   renderIssuerFilterGroups();
   renderIssuerFilterBanks(issuerFilterHoverTag);
   issuerFilterPanel.hidden = false;
@@ -832,14 +813,14 @@ function getProvinceOptions() {
 }
 
 function getRegionDisplayText(value) {
-  if (value === "all") return "全部区域";
+  if (value === "all") return "区域";
   if (value.startsWith("region:")) {
     return getRegionLabel(value.slice(7));
   }
   if (value.startsWith("province:")) {
     return `中国大陆 / ${value.slice(9)}`;
   }
-  return "全部区域";
+  return "";
 }
 
 function updateRegionGroupState() {
@@ -858,126 +839,47 @@ function updateRegionGroupState() {
     });
 }
 
-function renderRegionFilterProvinces(activeRegion) {
-  if (!regionFilterProvinces) return;
-  regionFilterProvinces.innerHTML = "";
+function renderRegionFilterBanks() {
+  if (!regionFilterBanks) return;
+  regionFilterBanks.innerHTML = "";
 
-  if (activeRegion !== "CN") return;
+  const regions = [
+    { value: "CN", label: "中国大陆" },
+    { value: "HK", label: "中国香港" },
+  ];
 
-  getProvinceOptions().forEach((option) => {
+  regions.forEach((region) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "issuer-filter-bank-item";
-    button.dataset.value = `province:${option.value}`;
-    button.textContent = `${option.label} (${option.count})`;
+    button.dataset.value = `region:${region.value}`;
+    button.textContent = region.label;
     button.classList.toggle(
       "is-active",
-      regionFilterValue === button.dataset.value,
+      regionFilterValue === `region:${region.value}`,
     );
     button.addEventListener("click", () => {
-      setRegionFilterValue(button.dataset.value);
+      setRegionFilterValue(`region:${region.value}`);
       closeRegionFilterPanel();
       render();
     });
-    regionFilterProvinces.append(button);
+    regionFilterBanks.append(button);
   });
-}
-
-function renderRegionFilterGroups() {
-  if (!regionFilterGroups) return;
-  regionFilterGroups.innerHTML = "";
-
-  const regionOptions = getRegionOptions();
-  const totalCount = regionOptions.reduce((sum, item) => sum + item.count, 0);
-
-  const allButton = document.createElement("button");
-  allButton.type = "button";
-  allButton.className = "issuer-filter-item";
-  allButton.dataset.region = "all";
-  allButton.textContent = `全部区域 (${totalCount})`;
-  allButton.addEventListener("mouseenter", () => {
-    regionFilterHoverRegion = "all";
-    updateRegionGroupState();
-    renderRegionFilterProvinces("all");
-  });
-  allButton.addEventListener("focus", () => {
-    regionFilterHoverRegion = "all";
-    updateRegionGroupState();
-    renderRegionFilterProvinces("all");
-  });
-  allButton.addEventListener("click", () => {
-    setRegionFilterValue("all");
-    closeRegionFilterPanel();
-    render();
-  });
-  regionFilterGroups.append(allButton);
-
-  regionOptions.forEach((option) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "issuer-filter-item";
-    button.dataset.region = option.value;
-    button.textContent = `${option.label} (${option.count})`;
-    button.addEventListener("mouseenter", () => {
-      regionFilterHoverRegion = option.value;
-      updateRegionGroupState();
-      renderRegionFilterProvinces(option.value);
-    });
-    button.addEventListener("focus", () => {
-      regionFilterHoverRegion = option.value;
-      updateRegionGroupState();
-      renderRegionFilterProvinces(option.value);
-    });
-    button.addEventListener("click", () => {
-      setRegionFilterValue(`region:${option.value}`);
-      closeRegionFilterPanel();
-      render();
-    });
-    regionFilterGroups.append(button);
-  });
-
-  updateRegionGroupState();
 }
 
 function setRegionFilterValue(value) {
   const nextValue = value || "all";
-  const regionOptions = getRegionOptions();
-  const provinceOptions = getProvinceOptions();
-
   if (nextValue === "all") {
     regionFilterValue = "all";
-    regionFilterHoverRegion = "all";
-  } else if (!initialDataLoaded) {
-    regionFilterValue = nextValue;
-    if (nextValue.startsWith("region:")) {
-      regionFilterHoverRegion = normalizeRegionValue(nextValue.slice(7));
-    } else if (nextValue.startsWith("province:")) {
-      regionFilterHoverRegion = "CN";
-    } else {
-      regionFilterHoverRegion = "all";
-    }
   } else if (nextValue.startsWith("region:")) {
     const region = normalizeRegionValue(nextValue.slice(7));
-    const exists = regionOptions.some((option) => option.value === region);
-    regionFilterValue = exists ? `region:${region}` : "all";
-    regionFilterHoverRegion = exists ? region : "all";
-  } else if (nextValue.startsWith("province:")) {
-    const province = normalizeProvinceValue(nextValue.slice(9));
-    const exists = provinceOptions.some((option) => option.value === province);
-    if (exists) {
-      regionFilterValue = `province:${province}`;
-      regionFilterHoverRegion = "CN";
+    if (region === "CN" || region === "HK") {
+      regionFilterValue = `region:${region}`;
     } else {
       regionFilterValue = "all";
-      regionFilterHoverRegion = "all";
     }
   } else {
     regionFilterValue = "all";
-    regionFilterHoverRegion = "all";
-  }
-
-  if (regionFilterLabel) {
-    regionFilterLabel.textContent = getRegionDisplayText(regionFilterValue);
   }
 }
 
@@ -985,15 +887,14 @@ function updateRegionFilterOptions() {
   const currentValue = pendingRegionFilterValue || regionFilterValue;
   setRegionFilterValue(currentValue);
   pendingRegionFilterValue = regionFilterValue;
-  renderRegionFilterGroups();
-  renderRegionFilterProvinces(regionFilterHoverRegion);
 }
 
 function openRegionFilterPanel() {
   if (!regionFilterPanel || !regionFilterTrigger) return;
   closeIssuerFilterPanel();
-  renderRegionFilterGroups();
-  renderRegionFilterProvinces(regionFilterHoverRegion);
+  closeOrganizationFilterPanel();
+  closeStatusFilterPanel();
+  renderRegionFilterBanks();
   regionFilterPanel.hidden = false;
   regionFilterTrigger.setAttribute("aria-expanded", "true");
 }
@@ -1002,6 +903,42 @@ function closeRegionFilterPanel() {
   if (!regionFilterPanel || !regionFilterTrigger) return;
   regionFilterPanel.hidden = true;
   regionFilterTrigger.setAttribute("aria-expanded", "false");
+}
+
+function renderStatusFilterBanks() {
+  if (!statusFilterBanks) return;
+  statusFilterBanks.innerHTML = "";
+
+  Object.entries(STATUS_LABELS).forEach(([value, label]) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "issuer-filter-bank-item";
+    button.dataset.value = value;
+    button.textContent = label;
+    button.classList.toggle("is-active", statusValue === value);
+    button.addEventListener("click", () => {
+      statusValue = value;
+      closeStatusFilterPanel();
+      render();
+    });
+    statusFilterBanks.append(button);
+  });
+}
+
+function openStatusFilterPanel() {
+  if (!statusFilterPanel || !statusFilterTrigger) return;
+  closeIssuerFilterPanel();
+  closeOrganizationFilterPanel();
+  closeRegionFilterPanel();
+  renderStatusFilterBanks();
+  statusFilterPanel.hidden = false;
+  statusFilterTrigger.setAttribute("aria-expanded", "true");
+}
+
+function closeStatusFilterPanel() {
+  if (!statusFilterPanel || !statusFilterTrigger) return;
+  statusFilterPanel.hidden = true;
+  statusFilterTrigger.setAttribute("aria-expanded", "false");
 }
 
 function getOrganizationOptions() {
@@ -1018,26 +955,41 @@ function getOrganizationOptions() {
   });
 }
 
-function updateOrganizationFilterOptions() {
-  if (!organizationFilter) return;
-  const currentValue = pendingOrganizationFilterValue || organizationFilter.value || "all";
+function renderOrganizationFilterBanks() {
+  if (!organizationFilterBanks) return;
+  organizationFilterBanks.innerHTML = "";
   const options = getOrganizationOptions();
 
-  organizationFilter.innerHTML = "";
-  organizationFilter.append(createOption("all", "全部卡组织"));
   options.forEach((item) => {
-    organizationFilter.append(createOption(item, item));
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "issuer-filter-bank-item";
+    button.dataset.value = item;
+    button.textContent = item;
+    button.classList.toggle("is-active", organizationValue === item);
+    button.addEventListener("click", () => {
+      organizationValue = item;
+      closeOrganizationFilterPanel();
+      render();
+    });
+    organizationFilterBanks.append(button);
   });
+}
 
-  if (!initialDataLoaded && currentValue !== "all" && !options.includes(currentValue)) {
-    pendingOrganizationFilterValue = currentValue;
-    return;
-  }
+function openOrganizationFilterPanel() {
+  if (!organizationFilterPanel || !organizationFilterTrigger) return;
+  closeIssuerFilterPanel();
+  closeRegionFilterPanel();
+  closeStatusFilterPanel();
+  renderOrganizationFilterBanks();
+  organizationFilterPanel.hidden = false;
+  organizationFilterTrigger.setAttribute("aria-expanded", "true");
+}
 
-  organizationFilter.value = options.includes(currentValue)
-    ? currentValue
-    : "all";
-  pendingOrganizationFilterValue = organizationFilter.value;
+function closeOrganizationFilterPanel() {
+  if (!organizationFilterPanel || !organizationFilterTrigger) return;
+  organizationFilterPanel.hidden = true;
+  organizationFilterTrigger.setAttribute("aria-expanded", "false");
 }
 
 function compareCards(a, b) {
@@ -1368,8 +1320,8 @@ function cardMatches(card) {
   const search = String(searchInput?.value || "")
     .trim()
     .toLowerCase();
-  const organization = organizationFilter?.value || "all";
-  const status = statusFilter?.value || "all";
+  const organization = organizationValue;
+  const status = statusValue;
 
   return (
     (organization === "all" ||
@@ -1534,8 +1486,53 @@ function createShowMoreActions(typeId, totalCount) {
   wrap.append(moreButton, allButton);
   return wrap;
 }
+function updateActiveFilters() {
+  const container = document.querySelector("#activeFilters");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const org = organizationValue;
+  if (org && org !== "all") {
+    container.append(createFilterTag(org, () => {
+      organizationValue = "all";
+      pendingOrganizationFilterValue = "all";
+      render();
+    }));
+  }
+
+  if (issuerFilterValue !== "all") {
+    const label = getIssuerDisplayText(issuerFilterValue);
+    if (label) {
+      container.append(createFilterTag(label, () => {
+        setIssuerFilterValue("all");
+        render();
+      }));
+    }
+  }
+
+  if (regionFilterValue !== "all") {
+    const label = getRegionDisplayText(regionFilterValue);
+    if (label) {
+      container.append(createFilterTag(label, () => {
+        setRegionFilterValue("all");
+        render();
+      }));
+    }
+  }
+
+  const status = statusValue;
+  if (status && status !== "all") {
+    const label = STATUS_LABELS[status] || status;
+    container.append(createFilterTag(label, () => {
+      statusValue = "all";
+      render();
+    }));
+  }
+}
+
 function render() {
   if (!sectionRoot) return;
+  pendingOrganizationFilterValue = organizationValue;
   pendingIssuerFilterValue = issuerFilterValue;
   pendingRegionFilterValue = regionFilterValue;
   updateUrlState();
@@ -1585,14 +1582,32 @@ function render() {
 
     sectionRoot.append(section);
   });
+
+  updateActiveFilters();
 }
 
 function bindEvents() {
-  [searchInput, organizationFilter, statusFilter].forEach((control) => {
-    if (!control) return;
-    control.addEventListener("input", render);
-    control.addEventListener("change", render);
-  });
+  searchInput?.addEventListener("input", render);
+
+  if (organizationFilterTrigger) {
+    organizationFilterTrigger.addEventListener("click", () => {
+      if (organizationFilterPanel?.hidden) {
+        openOrganizationFilterPanel();
+      } else {
+        closeOrganizationFilterPanel();
+      }
+    });
+  }
+
+  if (statusFilterTrigger) {
+    statusFilterTrigger.addEventListener("click", () => {
+      if (statusFilterPanel?.hidden) {
+        openStatusFilterPanel();
+      } else {
+        closeStatusFilterPanel();
+      }
+    });
+  }
 
   if (issuerFilterTrigger) {
     issuerFilterTrigger.addEventListener("click", () => {
@@ -1624,11 +1639,27 @@ function bindEvents() {
     }
 
     if (
+      organizationFilterWrap &&
+      event.target instanceof Node &&
+      !organizationFilterWrap.contains(event.target)
+    ) {
+      closeOrganizationFilterPanel();
+    }
+
+    if (
       regionFilterWrap &&
       event.target instanceof Node &&
       !regionFilterWrap.contains(event.target)
     ) {
       closeRegionFilterPanel();
+    }
+
+    if (
+      statusFilterWrap &&
+      event.target instanceof Node &&
+      !statusFilterWrap.contains(event.target)
+    ) {
+      closeStatusFilterPanel();
     }
   });
 
@@ -1690,7 +1721,6 @@ async function init() {
   applyUrlState();
   setIssuerFilterValue(issuerFilterValue);
   setRegionFilterValue(regionFilterValue);
-  updateOrganizationFilterOptions();
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
   render();
@@ -1699,7 +1729,6 @@ async function init() {
     warn: true,
     onBatch(batch) {
       cards = cards.concat(batch);
-      updateOrganizationFilterOptions();
       updateIssuerFilterOptions();
       updateRegionFilterOptions();
       render();
@@ -1707,7 +1736,6 @@ async function init() {
   });
 
   initialDataLoaded = true;
-  updateOrganizationFilterOptions();
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
   render();
@@ -1716,7 +1744,6 @@ async function init() {
 bindEvents();
 window.addEventListener("popstate", () => {
   applyUrlState();
-  updateOrganizationFilterOptions();
   updateIssuerFilterOptions();
   updateRegionFilterOptions();
   render();

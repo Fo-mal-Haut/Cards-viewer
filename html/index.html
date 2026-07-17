@@ -35,8 +35,7 @@
         </label>
       </section>
       <section class="filter-row" aria-label="筛选">
-        <div class="select-wrap issuer-filter" id="issuerFilterWrap">
-          <span>发行方</span>
+        <label class="select-wrap issuer-filter" id="issuerFilterWrap">
           <button
             class="issuer-filter-trigger"
             id="issuerFilterTrigger"
@@ -44,7 +43,7 @@
             aria-haspopup="menu"
             aria-expanded="false"
           >
-            <span id="issuerFilterLabel">全部发行方</span>
+            <span id="issuerFilterLabel"></span>
           </button>
           <div class="issuer-filter-panel" id="issuerFilterPanel" hidden>
             <div class="issuer-filter-columns">
@@ -62,20 +61,27 @@
               ></div>
             </div>
           </div>
-        </div>
-
-        <label class="select-wrap" for="organizationFilter">
-          <span>卡组织</span>
-          <select id="organizationFilter">
-            <option value="all">全部卡组织</option>
-          </select>
         </label>
 
-        <div
+        <label class="select-wrap issuer-filter" id="organizationFilterWrap">
+          <button
+            class="issuer-filter-trigger"
+            id="organizationFilterTrigger"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
+            <span id="organizationFilterLabel">卡组织</span>
+          </button>
+          <div class="issuer-filter-panel" id="organizationFilterPanel" hidden>
+            <div class="issuer-filter-banks" id="organizationFilterBanks" role="menu" aria-label="卡组织选项"></div>
+          </div>
+        </label>
+
+        <label
           class="select-wrap issuer-filter region-filter"
           id="regionFilterWrap"
         >
-          <span>地区</span>
           <button
             class="issuer-filter-trigger"
             id="regionFilterTrigger"
@@ -83,40 +89,32 @@
             aria-haspopup="menu"
             aria-expanded="false"
           >
-            <span id="regionFilterLabel">全部地区</span>
+            <span id="regionFilterLabel">区域</span>
           </button>
           <div
-            class="issuer-filter-panel region-filter-panel"
+            class="issuer-filter-panel"
             id="regionFilterPanel"
             hidden
           >
-            <div class="issuer-filter-columns">
-              <div
-                class="issuer-filter-groups"
-                id="regionFilterGroups"
-                role="menu"
-                aria-label="地区分类"
-              ></div>
-              <div
-                class="issuer-filter-banks"
-                id="regionFilterProvinces"
-                role="menu"
-                aria-label="省份列表"
-              ></div>
-            </div>
+            <div class="issuer-filter-banks" id="regionFilterBanks" role="menu" aria-label="地区选项"></div>
           </div>
-        </div>
-        <label class="select-wrap" for="statusFilter">
-          <span>状态</span>
-          <select id="statusFilter">
-            <option value="all">全部状态</option>
-            <option value="已激活">已激活</option>
-            <option value="未激活">未激活</option>
-            <option value="过期">过期</option>
-            <option value="注销">注销</option>
-          </select>
+        </label>
+        <label class="select-wrap issuer-filter" id="statusFilterWrap">
+          <button
+            class="issuer-filter-trigger"
+            id="statusFilterTrigger"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
+            <span id="statusFilterLabel">状态</span>
+          </button>
+          <div class="issuer-filter-panel" id="statusFilterPanel" hidden>
+            <div class="issuer-filter-banks" id="statusFilterBanks" role="menu" aria-label="状态选项"></div>
+          </div>
         </label>
       </section>
+      <div class="active-filters" id="activeFilters"></div>
       <div id="cardSections" class="sections" aria-live="polite"></div>
     </main>
 

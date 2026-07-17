@@ -242,29 +242,80 @@
 }
 
 .select-wrap {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 10px 0 12px;
+  gap: 4px;
+  height: 36px;
+  padding: 0 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 86%, transparent);
   color: var(--muted);
   font-size: 13px;
 }
 
 .select-wrap select {
-  min-width: 82px;
+  min-width: 60px;
+  padding-right: 14px;
   border: 0;
   outline: 0;
   background: var(--surface);
   color: var(--text);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .select-wrap select option {
   background: var(--surface);
   color: var(--text);
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -18px;
+  margin-bottom: 28px;
+}
+
+.active-filters:empty {
+  display: none;
+}
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 6px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.filter-tag-remove:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent-strong);
 }
 
 .theme-toggle {
@@ -635,11 +686,11 @@
 
 :root {
   color-scheme: light dark;
-  --bg: #f0eee6;
+  --bg: #faf9f5;
   --surface: #faf9f5;
   --surface-soft: #e3dacc;
   --text: #2c2820;
-  --muted: #8a7f72;
+  --muted: #646d6e;
   --line: rgba(44, 40, 32, 0.12);
   --accent: #877558;
   --accent-strong: #5a4e38;
@@ -779,7 +830,7 @@ body[data-page="home"] #stats {
 }
 
 .filter-row .select-wrap {
-  flex: 1 1 180px;
+  flex: 0 1 130px;
 }
 
 .issuer-filter {
@@ -1620,7 +1671,7 @@ body[data-page="home"] #stats {
   }
 
   .select-wrap {
-    flex: 1 1 138px;
+    flex: 1 1 120px;
   }
 
   .issuer-filter {
@@ -1700,10 +1751,6 @@ body[data-page="home"] #stats {
     min-width: 0;
   }
 
-  .select-wrap span {
-    display: block;
-  }
-
   .select-wrap select {
     width: 100%;
     min-width: 0;
@@ -1713,10 +1760,6 @@ body[data-page="home"] #stats {
     display: flex;
     align-items: center;
     padding-right: 12px;
-  }
-
-  .issuer-filter span {
-    display: block;
   }
 
   .issuer-filter-trigger {

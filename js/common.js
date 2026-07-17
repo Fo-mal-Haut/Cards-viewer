@@ -210,6 +210,21 @@
     return link;
   }
 
+  function createFilterTag(label, onRemove) {
+    const tag = document.createElement("span");
+    tag.className = "filter-tag";
+    tag.textContent = label;
+    const btn = document.createElement("button");
+    btn.className = "filter-tag-remove";
+    btn.textContent = "\u00D7";
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      onRemove();
+    });
+    tag.append(btn);
+    return tag;
+  }
+
   function renderGithubLink(className) {
     return `<a class="${className}" href="${GITHUB_REPOSITORY_URL}" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库" title="GitHub 仓库">${GITHUB_ICON_MARKUP}</a>`;
   }
@@ -409,6 +424,7 @@
     loadCardsFromAssetsProgressively,
     loadReferralItems,
     loadFooterLinks,
+    createFilterTag,
   };
 
   function getSavedTheme() {
