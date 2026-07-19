@@ -1,6 +1,6 @@
 ﻿(() => {
   const themeKey = "bankcard-theme";
-  const GITHUB_REPOSITORY_URL = "https://github.com/wanglh03/cards-viewer";
+  const GITHUB_REPOSITORY_URL = "https://github.com/Fo-mal-Haut/Cards-viewer.git";
   const EXTERNAL_URL_PATTERN = /^(https?:)?\/\//i;
   const GITHUB_ICON_MARKUP = `
     <svg class="icon-link-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

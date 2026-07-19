@@ -137,6 +137,26 @@
   white-space: nowrap;
 }
 
+.card-auto-repay-cell {
+  text-align: center;
+}
+
+.card-auto-repay-yes {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--positive, #22c55e) 15%, transparent);
+  color: var(--positive, #22c55e);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.card-auto-repay-no {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .card-issuer-cell .bank-name-inline {
   width: 100%;
 }

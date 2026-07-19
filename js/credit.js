@@ -334,6 +334,12 @@ function buildCreditRow(card) {
     card.annualFee,
   );
   row.querySelector(".card-ftf-cell").textContent = formatCell(card.ftf);
+  const autoRepayCell = row.querySelector(".card-auto-repay-cell");
+  if (card.autoRepay) {
+    autoRepayCell.innerHTML = '<span class="card-auto-repay-yes">已开通</span>';
+  } else {
+    autoRepayCell.innerHTML = '<span class="card-auto-repay-no">-</span>';
+  }
   row.querySelector(".card-benefit-cell").textContent = formatCell(
     card.benefit,
   );
@@ -397,6 +403,7 @@ function mapCreditCard(bankKey, bankInfo, entry) {
     status: normalizeCardStatus(cardMeta.status),
     annualFee: String(firstDefined(cardMeta.annual_fee) || "").trim(),
     ftf: String(firstDefined(cardMeta.ftf) || "").trim(),
+    autoRepay: cardMeta.auto_repay === true,
     benefit: String(cardMeta.benefit || "").trim(),
     searchText: [
       cardName,

@@ -76,6 +76,85 @@ python build.py deploy
   2. 热重载：通过 `__reload.txt` 文件的时间戳，浏览器每 1 秒轮询一次，检测到变化自动刷新页面
   3. 启动 HTTP 服务器：默认在 http://127.0.0.1:8000 提供服务，自动打开浏览器
 
+## 参数说明
+
+### `bank` 对象参数
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `native_name` | string | **是** | 银行中文名称，如"招商银行" |
+| `english_name` | string | **是** | 银行英文名称，如"China Merchants Bank" |
+| `region` | string | **是** | 地区代码，如 `"CN"`（中国）、`"HK"`（香港） |
+| `tag` | string | 否 | 银行标签：`"state"`(国有) / `"stock"`(股份) / `"city"`(城商) / `"rural"`(农商) / `"foreign"`(外资) / `"digital"`(数字) / `"transit"`(交通) |
+| `province` | string | 否 | 银行所在省份，如 `"广东"`、`"北京"` |
+| `url` | string | 否 | 银行官网链接 |
+| `logo` | string | 否 | logo 文件名，如 `"cmb.ico"`、`"logo.svg"` |
+| `billing_day` | string | 否 | 银行级默认账单日，如 `"18"`，可被卡的账单日覆盖 |
+| `due_day` | string | 否 | 银行级默认还款日，如 `"06"`，可被卡的还款日覆盖 |
+| `limit` | object | 否 | 银行级默认额度，如 `{"CNY": "25000"}`，可被卡的额度覆盖 |
+
+### `cards[]` 数组参数
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `name` | string | **是** | 卡名称，如"万事达人民币IC借记卡（普卡）" |
+| `type` | string | **是** | 卡类型：`"Debit"` / `"Credit"` / `"Prepaid"` / `"Transit"` |
+| `organization` | string | **是** | 卡组织：`"UnionPay"` / `"VISA"` / `"Mastercard"` / `"AMEX"` / `"JCB"` / `"China T-Union"` |
+| `bin` | string | **是** | BIN 号，如 `"621663"`、`"534293"` |
+| `currency` | string[] | **是** | 支持币种数组，如 `["CNY"]`、`["HKD", "USD", "EUR"]` |
+| `tier` | string | 否 | 卡片等级：`"Standard"` / `"Gold"` / `"Platinum"` / `"World"` / `"World Elite"` / `"Signature"` / `"Infinite"` / `"Diamond"` / `"Classic"` 等 |
+| `status` | string | 否 | 卡片状态：`"active"` / `"inactive"` / `"expired"` / `"cancelled"`，默认 `"active"` |
+| `acquired` | string | 否 | 申领日期，格式 `"YYYY-MM"` 或 `"YYYY-MM-DD"` |
+| `ext` | string | 否 | 卡面图片扩展名：`"png"` / `"jpg"` / `"jpeg"` / `"webp"` |
+| `alt_image` | string | 否 | 备用卡面图片文件名（一张卡有多个卡面时使用） |
+| `desc` | string | 否 | 卡片描述文本 |
+| `benefit` | string | 否 | 卡片权益说明，支持 `\n` 换行 |
+| `branch` | string | 否 | 开户支行名称 |
+| `link` | string | 否 | 卡片申请/介绍页面链接 |
+| `billing_day` | string | 否 | 账单日，覆盖银行级默认值 |
+| `due_day` | string | 否 | 还款日，覆盖银行级默认值 |
+| `annual_fee` | string | 否 | 年费说明，如 `"无"` |
+| `ftf` | string | 否 | 外币交易手续费（FTF），如 `"0%"`、`"1.95%"` |
+| `auto_repay` | boolean | 否 | 是否开通自动还款，`true` |
+| `limit` | object | 否 | 额度，如 `{"CNY": "125000"}`，覆盖银行级默认值 |
+| `sub_card` | boolean | 否 | 是否为附属卡，`true` |
+| `virtual` | boolean | 否 | 是否为虚拟卡，`true` |
+| `withdrawal` | object | 否 | ATM 取款手续费结构，见下方说明 |
+| `withdrawal_currency_rules` | object | 否 | 按币种区分的取款规则 |
+
+### `withdrawal` 取款费结构
+
+```json
+{
+  "local": { "UnionPay": "15HKD", "VISA": "25HKD" },
+  "overseas": { "UnionPay": "50HKD", "VISA": "40HKD" }
+}
+```
+
+- `local` — 本地 ATM 取款费，key 为 ATM 网络名称，value 为费额（数字+币种）
+- `overseas` — 境外 ATM 取款费，结构同上
+
+### `withdrawal_currency_rules` 按币种取款规则
+
+```json
+{
+  "local": { "HKD": "0", "foreign": "unsupported" },
+  "overseas": {
+    "HKD": "50HKD",
+    "foreign": { "fixed": "50HKD", "percent": "1.95%", "mode": "add" }
+  }
+}
+```
+
+- `"<币种>": "费额"` — 该币种取款固定费用
+- `"foreign": "unsupported"` — 不支持外币取款
+- `"foreign": { "fixed", "percent", "mode" }` — 外币取款：固定费 + 百分比叠加
+
+### 必填字段汇总
+
+构建和数据完整性所需的必填字段：`bank.native_name`、`bank.english_name`、`bank.region`、`cards[].name`、`cards[].type`、`cards[].organization`、`cards[].bin`、`cards[].currency`。其余字段按需填写。
+
+
 ## 开发模式
 
 ```bash
