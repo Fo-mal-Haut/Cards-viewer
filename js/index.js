@@ -22,6 +22,7 @@ const STATUS_LABELS = {
 };
 
 const STATUS_CLASS = {
+  active: "is-active",
   inactive: "is-muted",
   expired: "is-danger",
   cancelled: "is-danger",

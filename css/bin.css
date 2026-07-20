@@ -3,10 +3,12 @@
   margin-top: 8px;
   margin-bottom: 0;
   font-size: clamp(36px, 7vw, 76px);
-  line-height: 0.98;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .table-wrap {
+  position: relative;
   overflow: auto;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -27,10 +29,11 @@
   z-index: 1;
   padding: 14px 12px;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 60%, transparent);
   color: var(--muted);
   font-size: 13px;
-  font-weight: 760;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-align: left;
   white-space: nowrap;
 }
@@ -39,8 +42,8 @@
   position: sticky;
   left: 0;
   z-index: 4;
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
-  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.32);
+  background: color-mix(in srgb, var(--surface-soft) 60%, transparent);
+  box-shadow: 8px 0 24px -16px rgba(0, 0, 0, 0.32);
 }
 
 .bin-table tbody td {
@@ -50,132 +53,79 @@
   background: color-mix(in srgb, var(--surface) 94%, transparent);
   color: var(--text);
   font-size: 14px;
-  transition: background 180ms ease;
+  transition: background 200ms ease;
 }
 
 .bin-table tbody td:first-child {
-  --bin-code-bg:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
   position: sticky;
   left: 0;
   z-index: 2;
-  background: var(--bin-code-bg);
-  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.24);
-}
-
-.bin-table tbody .bin-tier-cell,
-.bin-table tbody .bin-name-cell {
-  --bin-code-bg:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
-  background: var(--bin-code-bg);
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: 8px 0 24px -16px rgba(0, 0, 0, 0.24);
 }
 
 .bin-table tbody tr:hover td {
-  background: color-mix(in srgb, var(--accent) 5%, var(--surface) 95%);
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
 }
 
 .bin-table tbody tr:hover td:first-child {
-  --bin-code-bg:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%),
-      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%)
-    );
-}
-
-.bin-table tbody tr:hover .bin-tier-cell,
-.bin-table tbody tr:hover .bin-name-cell {
-  --bin-code-bg:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%),
-      color-mix(in srgb, var(--accent) 5%, var(--surface) 95%)
-    );
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
 }
 
 .bin-table tbody tr:last-child td {
   border-bottom: 0;
 }
 
-.bin-table tbody tr.tier-accent-gold td:first-child,
-.bin-table tbody tr.tier-accent-gold .bin-tier-cell,
-.bin-table tbody tr.tier-accent-gold .bin-name-cell {
-  --bin-code-bg:
-    radial-gradient(circle at 10% 14%, rgba(255, 204, 74, 0.3), transparent 34%),
-    radial-gradient(circle at 100% 84%, rgba(210, 138, 16, 0.22), transparent 42%),
-    radial-gradient(circle at 54% 100%, rgba(255, 235, 156, 0.16), transparent 46%),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
+.bin-table tbody tr {
+  position: relative;
 }
 
-.bin-table tbody tr.tier-accent-platinum td:first-child,
-.bin-table tbody tr.tier-accent-platinum .bin-tier-cell,
-.bin-table tbody tr.tier-accent-platinum .bin-name-cell {
-  --bin-code-bg:
-    radial-gradient(circle at 14% 12%, rgba(226, 233, 240, 0.3), transparent 34%),
-    radial-gradient(circle at 100% 80%, rgba(112, 126, 145, 0.28), transparent 42%),
-    radial-gradient(circle at 55% 100%, rgba(214, 223, 232, 0.18), transparent 46%),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
+.bin-table tbody tr.tier-accent-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 14%, rgba(255, 204, 74, 0.20), transparent 34%),
+    radial-gradient(circle at 100% 84%, rgba(210, 138, 16, 0.14), transparent 42%);
+  z-index: 1;
 }
 
-.bin-table tbody tr.tier-accent-spectrum td:first-child,
-.bin-table tbody tr.tier-accent-spectrum .bin-tier-cell,
-.bin-table tbody tr.tier-accent-spectrum .bin-name-cell {
-  --bin-code-bg:
-    radial-gradient(circle at 8% 18%, rgba(255, 74, 74, 0.24), transparent 30%),
-    radial-gradient(circle at 100% 16%, rgba(35, 136, 255, 0.26), transparent 34%),
-    radial-gradient(circle at 86% 100%, rgba(26, 224, 151, 0.2), transparent 40%),
-    radial-gradient(circle at 0% 100%, rgba(255, 174, 52, 0.18), transparent 34%),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
+.bin-table tbody tr.tier-accent-platinum::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(226, 233, 240, 0.20), transparent 34%),
+    radial-gradient(circle at 100% 80%, rgba(112, 126, 145, 0.18), transparent 42%);
+  z-index: 1;
 }
 
-.bin-table tbody tr.tier-accent-diamond td:first-child,
-.bin-table tbody tr.tier-accent-diamond .bin-tier-cell,
-.bin-table tbody tr.tier-accent-diamond .bin-name-cell {
-  --bin-code-bg:
-    radial-gradient(circle at 10% 12%, rgba(62, 255, 240, 0.24), transparent 32%),
-    radial-gradient(circle at 100% 16%, rgba(94, 138, 255, 0.26), transparent 34%),
-    radial-gradient(circle at 82% 100%, rgba(210, 93, 255, 0.2), transparent 40%),
-    radial-gradient(circle at 0% 100%, rgba(180, 250, 255, 0.18), transparent 34%),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--surface) 94%, transparent),
-      color-mix(in srgb, var(--surface) 94%, transparent)
-    );
+.bin-table tbody tr.tier-accent-spectrum::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255, 74, 74, 0.16), transparent 30%),
+    radial-gradient(circle at 100% 16%, rgba(35, 136, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 86% 100%, rgba(26, 224, 151, 0.14), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(255, 174, 52, 0.12), transparent 34%);
+  z-index: 1;
 }
 
-.bin-table tbody tr.tier-accent-gold:hover td:first-child,
-.bin-table tbody tr.tier-accent-gold:hover .bin-tier-cell,
-.bin-table tbody tr.tier-accent-gold:hover .bin-name-cell,
-.bin-table tbody tr.tier-accent-platinum:hover td:first-child,
-.bin-table tbody tr.tier-accent-platinum:hover .bin-tier-cell,
-.bin-table tbody tr.tier-accent-platinum:hover .bin-name-cell,
-.bin-table tbody tr.tier-accent-spectrum:hover td:first-child,
-.bin-table tbody tr.tier-accent-spectrum:hover .bin-tier-cell,
-.bin-table tbody tr.tier-accent-spectrum:hover .bin-name-cell,
-.bin-table tbody tr.tier-accent-diamond:hover td:first-child,
-.bin-table tbody tr.tier-accent-diamond:hover .bin-tier-cell,
-.bin-table tbody tr.tier-accent-diamond:hover .bin-name-cell {
-  filter: brightness(1.02);
+.bin-table tbody tr.tier-accent-diamond::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(62, 255, 240, 0.16), transparent 32%),
+    radial-gradient(circle at 100% 16%, rgba(94, 138, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 100%, rgba(210, 93, 255, 0.14), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(180, 250, 255, 0.12), transparent 34%);
+  z-index: 1;
 }
 
 .bin-code-cell,

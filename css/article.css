@@ -133,6 +133,7 @@ body[data-page="about"] .markdown-meta {
   color: var(--text);
   font-weight: 780;
   line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .markdown-heading-linkable {

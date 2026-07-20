@@ -3,7 +3,8 @@
   margin-top: 8px;
   margin-bottom: 0;
   font-size: clamp(36px, 7vw, 76px);
-  line-height: 0.98;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .hero .stats {
@@ -46,10 +47,11 @@
   z-index: 1;
   padding: 14px 12px;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 60%, transparent);
   color: var(--muted);
   font-size: 13px;
-  font-weight: 760;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-align: left;
   white-space: nowrap;
 }
@@ -59,8 +61,8 @@
   z-index: 4;
   width: 170px;
   min-width: 170px;
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
-  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.32);
+  background: color-mix(in srgb, var(--surface-soft) 60%, transparent);
+  box-shadow: 8px 0 24px -16px rgba(0, 0, 0, 0.32);
 }
 
 .credit thead th:nth-child(11) {
@@ -83,7 +85,7 @@
   width: 170px;
   min-width: 170px;
   background: color-mix(in srgb, var(--surface) 94%, transparent);
-  box-shadow: 10px 0 18px -14px rgba(0, 0, 0, 0.24);
+  box-shadow: 8px 0 24px -16px rgba(0, 0, 0, 0.24);
 }
 
 .credit tbody td:nth-child(11) {
@@ -91,12 +93,16 @@
   min-width: 100px;
 }
 
+.credit tbody tr {
+  transition: background 200ms ease;
+}
+
 .credit tbody tr:hover {
-  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
 }
 
 .credit tbody tr:hover td:first-child {
-  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
 }
 
 .credit tbody tr:last-child td {
@@ -116,6 +122,11 @@
   background: color-mix(in srgb, var(--surface-soft) 70%, transparent);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
   cursor: zoom-in;
+  transition: transform 200ms ease;
+}
+
+.card-image-cell img:hover {
+  transform: scale(1.02);
 }
 
 .card-name-cell,
@@ -144,9 +155,9 @@
 .card-auto-repay-yes {
   display: inline-block;
   padding: 2px 10px;
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--positive, #22c55e) 15%, transparent);
-  color: var(--positive, #22c55e);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--positive) 15%, transparent);
+  color: var(--positive);
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;

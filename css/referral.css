@@ -3,10 +3,11 @@
   grid-template-columns: minmax(0, 1fr);
   align-items: end;
   gap: 24px;
-  padding: 54px 0 42px;
+  padding: 54px 0 48px;
 }
 
 .table-wrap {
+  position: relative;
   overflow: auto;
   margin-bottom: 56px;
   border: 1px solid var(--line);
@@ -28,10 +29,11 @@
   z-index: 1;
   padding: 14px 12px;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 60%, transparent);
   color: var(--muted);
   font-size: 13px;
-  font-weight: 760;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-align: left;
   white-space: nowrap;
 }
@@ -45,8 +47,12 @@
   line-height: 1.7;
 }
 
+.referral tbody tr {
+  transition: background 200ms ease;
+}
+
 .referral tbody tr:hover {
-  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  background: color-mix(in srgb, var(--surface-soft) 40%, transparent);
 }
 
 .referral tbody tr:last-child td {
